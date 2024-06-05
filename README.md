@@ -6,8 +6,6 @@
 
 Shortest Path Finder es una aplicación desarrollada como parte del proyecto programado de la asignatura IF3001 Algoritmos y Estructuras de Datos en la Universidad de Costa Rica. El objetivo de la aplicación es simular un robot que debe recorrer un laberinto desde una posición inicial hasta encontrar una zona segura en el menor número de pasos posibles. El robot tiene un máximo de 5 intentos para completar el laberinto.
 
-Aquí tienes una actualización del README.md basada en las características observadas en las imágenes proporcionadas:
-
 ## Características
 
 - **Menú Principal**: 
