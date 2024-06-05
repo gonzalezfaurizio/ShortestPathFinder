@@ -24,16 +24,14 @@ Shortest Path Finder es una aplicación desarrollada como parte del proyecto pro
    ```bash
    cd ShortestPathFinder
    ```
-3. Instala las dependencias necesarias:
-   ```bash
-   pip install -r requirements.txt
-   ```
+3. Importa el proyecto en tu IDE de Java preferido (Eclipse, IntelliJ, etc.).
+4. Asegúrate de tener configurado el JDK apropiado para el proyecto.
 
 ## Uso
 
-1. Ejecuta la aplicación:
+1. Ejecuta la aplicación desde tu IDE o usando la línea de comandos:
    ```bash
-   python main.py
+   java -jar ShortestPathFinder.jar
    ```
 2. Usa el menú principal para:
    - Ingresar y actualizar laberintos.
@@ -73,6 +71,7 @@ Las contribuciones son bienvenidas. Para contribuir, sigue estos pasos:
 - **C33317 Gonzalez Alfaro Faurizio**
 - **C36713 Rodriguez Gutierrez Rebeca**
 - **C36773 Rodriguez Rodriguez Andrey Eladio**
+
 
 ## Contacto
 
