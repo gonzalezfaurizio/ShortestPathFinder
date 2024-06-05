@@ -6,13 +6,27 @@
 
 Shortest Path Finder es una aplicación desarrollada como parte del proyecto programado de la asignatura IF3001 Algoritmos y Estructuras de Datos en la Universidad de Costa Rica. El objetivo de la aplicación es simular un robot que debe recorrer un laberinto desde una posición inicial hasta encontrar una zona segura en el menor número de pasos posibles. El robot tiene un máximo de 5 intentos para completar el laberinto.
 
+Aquí tienes una actualización del README.md basada en las características observadas en las imágenes proporcionadas:
+
 ## Características
 
-- Menú principal con opciones para ingresar laberintos, iniciar un juego nuevo, simular recorridos, ver instrucciones del juego, acceder al salón de la fama y salir de la aplicación.
-- Previsualización y actualización de laberintos.
-- Registro y validación de usuarios.
-- Ejecución de diferentes algoritmos de recorrido de laberintos, incluyendo búsqueda en profundidad, búsqueda en anchura, exploración de muros, y más.
-- Visualización del movimiento del robot y registro en el salón de la fama.
+- **Menú Principal**: 
+  - **Juego**: Permite ingresar al menú del juego donde se puede registrar, subir laberintos, iniciar un nuevo juego y seleccionar algoritmos de recorrido.
+  - **Salón de la Fama**: Acceso al registro de los mejores jugadores y sus logros.
+  - **Instrucciones**: Proporciona una guía sobre cómo jugar y utilizar las diferentes opciones del juego.
+  - **Salir**: Permite cerrar la aplicación.
+
+- **Menú del Juego**:
+  - **Registro y Validación de Usuarios**: Opción para que los usuarios se registren y se validen para poder jugar.
+  - **Subida de Laberintos**: Funcionalidad para subir y previsualizar laberintos personalizados.
+  - **Inicio del Juego**: Comienza un nuevo juego seleccionando un laberinto, un jugador y un algoritmo de recorrido.
+  - **Simulación de Recorridos**: Selección y ejecución de diferentes algoritmos de recorrido de laberintos, incluyendo:
+    - Búsqueda en profundidad
+    - Búsqueda en anchura
+    - Exploración de muros
+    - Otros algoritmos personalizados
+  - **Visualización del Movimiento del Robot**: Muestra el recorrido del robot a través del laberinto seleccionado.
+  - **Registro en el Salón de la Fama**: Almacena y muestra los mejores tiempos y rutas completadas por los jugadores.
 
 ## Instalación
 
@@ -33,13 +47,6 @@ Shortest Path Finder es una aplicación desarrollada como parte del proyecto pro
    ```bash
    java -jar ShortestPathFinder.jar
    ```
-2. Usa el menú principal para:
-   - Ingresar y actualizar laberintos.
-   - Iniciar un nuevo juego ingresando un nombre de usuario válido y seleccionando un laberinto.
-   - Ver la simulación del recorrido usando diferentes algoritmos.
-   - Leer las instrucciones del juego.
-   - Consultar el salón de la fama.
-   
 ## Algoritmos de Recorrido Implementados
 
 - **A* (AStarAlgorithm.java):** Algoritmo de búsqueda heurística que encuentra el camino más corto con eficiencia.
@@ -72,7 +79,6 @@ Las contribuciones son bienvenidas. Para contribuir, sigue estos pasos:
 - **C33317 Gonzalez Alfaro Faurizio**
 - **C36713 Rodriguez Gutierrez Rebeca**
 - **C36773 Rodriguez Rodriguez Andrey Eladio**
-
 
 ## Contacto
 
