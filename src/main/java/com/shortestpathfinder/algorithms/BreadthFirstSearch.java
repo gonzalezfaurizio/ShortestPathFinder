@@ -18,8 +18,10 @@ import java.util.Queue;
 
 public class BreadthFirstSearch implements PathfindingAlgorithm {
 
+    // Static variables to store the start and end coordinates
     static int startX, startY, endX, endY;
 
+    // Implementation of the pathfinding method
     @Override
     public int[][] findPath(char[][] maze) {
         // Identify the start and end points from the maze
@@ -35,10 +37,12 @@ public class BreadthFirstSearch implements PathfindingAlgorithm {
             }
         }
 
+        // Initialize the path, visited, and predecessors arrays
         int[][] path = new int[maze.length][maze[0].length];
         boolean[][] visited = new boolean[maze.length][maze[0].length];
         int[][][] predecessors = new int[maze.length][maze[0].length][2];
 
+        // Set all predecessors to -1 (indicating no predecessor)
         for (int i = 0; i < maze.length; i++) {
             for (int j = 0; j < maze[0].length; j++) {
                 predecessors[i][j][0] = -1;
@@ -46,32 +50,38 @@ public class BreadthFirstSearch implements PathfindingAlgorithm {
             }
         }
 
+        // Initialize the queue with the start node
         Queue<int[]> queue = new LinkedList<>();
         queue.add(new int[]{startX, startY});
         visited[startX][startY] = true;
 
-        boolean found = false;
+        boolean found = false; // Flag to indicate if the path to the end has been found
+
+        // Main loop of the BFS algorithm
         while (!queue.isEmpty() && !found) {
-            int[] current = queue.poll();
+            int[] current = queue.poll(); // Get the next node to explore
             int x = current[0];
             int y = current[1];
 
+            // If the end node is reached, exit the loop
             if (x == endX && y == endY) {
                 found = true;
                 break;
             }
 
+            // Explore the neighboring nodes
             int[][] directions = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
             for (int[] dir : directions) {
                 int newX = x + dir[0];
                 int newY = y + dir[1];
 
+                // Check if the neighbor is within bounds, not a wall, and not visited
                 if (newX >= 0 && newY >= 0 && newX < maze.length && newY < maze[0].length
                         && !visited[newX][newY] && maze[newX][newY] != 'X') {
 
-                    queue.add(new int[]{newX, newY});
-                    visited[newX][newY] = true;
-                    predecessors[newX][newY][0] = x;
+                    queue.add(new int[]{newX, newY}); // Add neighbor to the queue
+                    visited[newX][newY] = true; // Mark neighbor as visited
+                    predecessors[newX][newY][0] = x; // Set predecessor
                     predecessors[newX][newY][1] = y;
                 }
             }
