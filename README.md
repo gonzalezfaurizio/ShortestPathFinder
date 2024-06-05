@@ -8,23 +8,13 @@ Shortest Path Finder es una aplicación desarrollada como parte del proyecto pro
 
 ## Características
 
-- **Menú Principal**: 
-  - **Juego**: Permite ingresar al menú del juego donde se puede registrar, subir laberintos, iniciar un nuevo juego y seleccionar algoritmos de recorrido.
-  - **Salón de la Fama**: Acceso al registro de los mejores jugadores y sus logros.
-  - **Instrucciones**: Proporciona una guía sobre cómo jugar y utilizar las diferentes opciones del juego.
-  - **Salir**: Permite cerrar la aplicación.
-
-- **Menú del Juego**:
-  - **Registro y Validación de Usuarios**: Opción para que los usuarios se registren y se validen para poder jugar.
-  - **Subida de Laberintos**: Funcionalidad para subir y previsualizar laberintos personalizados.
-  - **Inicio del Juego**: Comienza un nuevo juego seleccionando un laberinto, un jugador y un algoritmo de recorrido.
-  - **Simulación de Recorridos**: Selección y ejecución de diferentes algoritmos de recorrido de laberintos, incluyendo:
-    - Búsqueda en profundidad
-    - Búsqueda en anchura
-    - Exploración de muros
-    - Otros algoritmos personalizados
-  - **Visualización del Movimiento del Robot**: Muestra el recorrido del robot a través del laberinto seleccionado.
-  - **Registro en el Salón de la Fama**: Almacena y muestra los mejores tiempos y rutas completadas por los jugadores.
+- Menú principal con opciones para ingresar laberintos, iniciar un juego nuevo, simular recorridos, ver instrucciones del juego, acceder al salón de la fama y salir de la aplicación.
+- Previsualización y actualización de laberintos.
+- Registro y validación de usuarios.
+- Ejecución de diferentes algoritmos de recorrido de laberintos, incluyendo búsqueda en profundidad, búsqueda en anchura, exploración de muros, y más.
+- Visualización del movimiento del robot y registro en el salón de la fama.
+- Menú del juego que permite seleccionar y cargar laberintos, registrar jugadores y seleccionar algoritmos de recorrido.
+- Simulación visual del recorrido del robot a través del laberinto seleccionado.
 
 ## Instalación
 
