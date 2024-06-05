@@ -8,7 +8,7 @@ Shortest Path Finder es una aplicación desarrollada como parte del proyecto pro
 
 ## Características
 
-- Menú principal con opciones para ingresar laberintos, iniciar un juego nuevo, simular recorridos, ver instrucciones del juego, acceder al salón de la fama y salir de la aplicación.
+- Menú principal con opciones para iniciar un juego nuevo, ver instrucciones del juego, acceder al salón de la fama y salir de la aplicación.
 - Previsualización y actualización de laberintos.
 - Registro y validación de usuarios.
 - Ejecución de diferentes algoritmos de recorrido de laberintos, incluyendo búsqueda en profundidad, búsqueda en anchura, exploración de muros, y más.
