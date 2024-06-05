@@ -13,9 +13,6 @@ import java.util.Queue;
  * @authors: - GONZALEZ ALFARO FAURIZIO - RODRIGUEZ GUTIERREZ REBECA - RODRIGUEZ
  * RODRIGUEZ ANDREY ELADIO
  */
-import java.util.LinkedList;
-import java.util.Queue;
-
 public class BreadthFirstSearch implements PathfindingAlgorithm {
 
     // Static variables to store the start and end coordinates
@@ -24,6 +21,7 @@ public class BreadthFirstSearch implements PathfindingAlgorithm {
     // Implementation of the pathfinding method
     @Override
     public int[][] findPath(char[][] maze) {
+
         // Identify the start and end points from the maze
         for (int i = 0; i < maze.length; i++) {
             for (int j = 0; j < maze[0].length; j++) {

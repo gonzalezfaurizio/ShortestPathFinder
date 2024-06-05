@@ -21,6 +21,7 @@ public class DepthFirstSearch implements PathfindingAlgorithm {
     // Implementation of the pathfinding method
     @Override
     public int[][] findPath(char[][] maze) {
+        
         // Identify the start and end points from the maze
         for (int i = 0; i < maze.length; i++) {
             for (int j = 0; j < maze[0].length; j++) {

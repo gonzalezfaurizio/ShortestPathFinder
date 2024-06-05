@@ -46,7 +46,6 @@ com\shortestpathfinder\model\Maze.class
 com\shortestpathfinder\ui\SelectMaze$2.class
 com\shortestpathfinder\ui\StartGame$1.class
 com\shortestpathfinder\ui\StartGame$5.class
-com\shortestpathfinder\model\HallOfFame.class
 com\shortestpathfinder\ui\MenuView$1.class
 com\shortestpathfinder\ui\GameMenuView$2.class
 com\shortestpathfinder\ui\InstructionsView.class
