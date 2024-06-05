@@ -39,13 +39,14 @@ Shortest Path Finder es una aplicación desarrollada como parte del proyecto pro
    - Ver la simulación del recorrido usando diferentes algoritmos.
    - Leer las instrucciones del juego.
    - Consultar el salón de la fama.
-
+   
 ## Algoritmos de Recorrido Implementados
 
-- **Búsqueda en profundidad:** Explora todas las alternativas posibles, retrocediendo solo cuando es necesario.
-- **Búsqueda en anchura:** Recorre una rama de una intersección a otra, retrocediendo para revisar caminos alternativos.
-- **Exploración de muros (mano derecha o izquierda):** Utiliza los muros como referencia para recorrer el laberinto.
-- **Algoritmo de relleno:** Realiza recorridos optimistas suponiendo inicialmente que no hay muros.
+- **A* (AStarAlgorithm.java):** Algoritmo de búsqueda heurística que encuentra el camino más corto con eficiencia.
+- **Búsqueda en profundidad (DepthFirstSearch.java):** Explora todas las alternativas posibles, retrocediendo solo cuando es necesario.
+- **Búsqueda en anchura (BreadthFirstSearch.java):** Recorre una rama de una intersección a otra, retrocediendo para revisar caminos alternativos.
+- **Relleno por inundación (FloodFillAlgorithm.java):** Realiza recorridos optimistas suponiendo inicialmente que no hay muros.
+- **Recorrido completo del laberinto (FullMazeTraversal.java):** Explora todas las rutas posibles del laberinto.
 
 ## Contribuciones
 
