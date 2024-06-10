@@ -22,7 +22,6 @@ public class MazeController implements ActionListener {
         this.view = view;
         this.mazeDAO = mazeDAO;
         view.getUploadMazeButton().addActionListener(this);
-
         view.getBackButton().addActionListener(this);
     }
 
@@ -30,20 +29,21 @@ public class MazeController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == view.getUploadMazeButton()) {
-
             JFileChooser fileChooser = new JFileChooser();
-
             int result = fileChooser.showOpenDialog(view);
 
             if (result == JFileChooser.APPROVE_OPTION) {
-
                 File selectedFile = fileChooser.getSelectedFile();
 
                 if (FileUtils.isValidJsonFile(selectedFile)) {
                     try {
-                        Maze maze = JsonUtils.fromJson(selectedFile.getAbsolutePath(), Maze.class);
-                        mazeDAO.addMaze(maze);
-                        JOptionPane.showMessageDialog(view, "Maze uploaded successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                        if (JsonUtils.validateJsonStructure(selectedFile.getAbsolutePath())) {
+                            Maze maze = JsonUtils.fromJson(selectedFile.getAbsolutePath(), Maze.class);
+                            mazeDAO.addMaze(maze);
+                            JOptionPane.showMessageDialog(view, "Maze uploaded successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(view, "Invalid maze format. Please upload a correctly formatted JSON file.", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
                     } catch (IOException | JsonSyntaxException ex) {
                         JOptionPane.showMessageDialog(view, "Error uploading maze: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                     }
@@ -51,7 +51,6 @@ public class MazeController implements ActionListener {
                     JOptionPane.showMessageDialog(view, "Invalid file format. Please upload a JSON file.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
-
         } else if (e.getSource() == view.getBackButton()) {
             view.dispose();
         }

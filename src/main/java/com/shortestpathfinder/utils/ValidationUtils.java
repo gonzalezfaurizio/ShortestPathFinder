@@ -1,4 +1,3 @@
-// File: src/com/shortestpathfinder/utils/ValidationUtils.java
 package com.shortestpathfinder.utils;
 
 import java.util.regex.Pattern;
