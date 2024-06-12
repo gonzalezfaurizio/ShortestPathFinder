@@ -9,16 +9,65 @@ import com.shortestpathfinder.model.*;
 import com.shortestpathfinder.ui.*;
 import com.shortestpathfinder.algorithms.*;
 
+/**
+ * Controller class for handling game-related actions in the application.
+ * Implements ActionListener to respond to events in the StartGame view.
+ *
+ * @version 1.0
+ * @since 2024-05-21
+ *
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
+ */
 public class GameController implements ActionListener {
 
+    /**
+     * The view associated with this controller.
+     */
     private StartGame view;
+
+    /**
+     * Data Access Object for managing Maze objects.
+     */
     private MazeDAO mazeDAO;
+
+    /**
+     * Data Access Object for managing Player objects.
+     */
     private PlayerDAO playerDAO;
+
+    /**
+     * Data Access Object for managing Game objects.
+     */
     private GameDAO gameDAO;
+
+    /**
+     * Data Access Object for managing Hall of Fame records.
+     */
     private HallOfFameDAO hallOfFameDAO;
+
+    /**
+     * The current game instance being managed by this controller.
+     */
     private Game currentGame;
+
+    /**
+     * The pathfinding algorithm selected for the game.
+     */
     private PathfindingAlgorithm selectedAlgorithm;
 
+    /**
+     * Constructs a new GameController with the specified view and DAOs.
+     * Initializes the controller with references to the view and data access
+     * objects.
+     *
+     * @param view the StartGame view associated with this controller.
+     * @param mazeDAO the DAO for managing Maze objects.
+     * @param playerDAO the DAO for managing Player objects.
+     * @param gameDAO the DAO for managing Game objects.
+     * @param hallOfFameDAO the DAO for managing Hall of Fame records.
+     */
     public GameController(StartGame view, MazeDAO mazeDAO, PlayerDAO playerDAO, GameDAO gameDAO, HallOfFameDAO hallOfFameDAO) {
         this.view = view;
         this.mazeDAO = mazeDAO;
@@ -32,6 +81,11 @@ public class GameController implements ActionListener {
         view.getBackButton().addActionListener(this);
     }
 
+    /**
+     * Handles action events triggered by the view.
+     *
+     * @param e the ActionEvent triggered by a user action.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == view.getSelectMazeButton()) {
@@ -47,6 +101,9 @@ public class GameController implements ActionListener {
         }
     }
 
+    /**
+     * Handles the selection of a maze.
+     */
     private void handleSelectMaze() {
         List<Maze> mazes = mazeDAO.getAllMazes();
         if (mazes.isEmpty()) {
@@ -67,6 +124,9 @@ public class GameController implements ActionListener {
         });
     }
 
+    /**
+     * Handles the selection of a player.
+     */
     private void handleSelectPlayer() {
         List<Player> players = playerDAO.getAllPlayers();
         if (players.isEmpty()) {
@@ -88,8 +148,11 @@ public class GameController implements ActionListener {
         }
     }
 
+    /**
+     * Handles the selection of a pathfinding algorithm.
+     */
     private void handleSelectAlgorithm() {
-        String[] algorithms = {"BreadthFirstSearch", "DepthFirstSearch", "FloodFillAlgorithm", "FullMazeTraversal", "AStarAlgorithm"};
+        String[] algorithms = {"BreadthFirstSearch", "DepthFirstSearch", "AStarAlgorithm"};
         String selectedAlgorithmName = (String) JOptionPane.showInputDialog(view, "Select an algorithm", "Algorithm Selection", JOptionPane.PLAIN_MESSAGE, null, algorithms, algorithms[0]);
         if (selectedAlgorithmName != null) {
             switch (selectedAlgorithmName) {
@@ -98,12 +161,6 @@ public class GameController implements ActionListener {
                     break;
                 case "DepthFirstSearch":
                     selectedAlgorithm = new DepthFirstSearch();
-                    break;
-                case "FloodFillAlgorithm":
-                    selectedAlgorithm = new FloodFillAlgorithm();
-                    break;
-                case "FullMazeTraversal":
-                    selectedAlgorithm = new FullMazeTraversal();
                     break;
                 case "AStarAlgorithm":
                     selectedAlgorithm = new AStarAlgorithm();
@@ -119,6 +176,9 @@ public class GameController implements ActionListener {
         }
     }
 
+    /**
+     * Handles the display of the path found by the algorithm.
+     */
     private void handleDisplayPath() {
         if (currentGame == null || currentGame.getPlayer() == null || currentGame.getMaze() == null || selectedAlgorithm == null) {
             JOptionPane.showMessageDialog(view, "Please select a maze, player, and algorithm first.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -144,6 +204,12 @@ public class GameController implements ActionListener {
         }
     }
 
+    /**
+     * Counts the number of steps in the provided path.
+     *
+     * @param path the path represented as a 2D array of coordinates.
+     * @return the number of steps in the path.
+     */
     private int countSteps(int[][] path) {
         int steps = 0;
         for (int[] row : path) {
@@ -156,6 +222,9 @@ public class GameController implements ActionListener {
         return steps;
     }
 
+    /**
+     * Makes the view visible.
+     */
     public void showView() {
         view.setVisible(true);
     }

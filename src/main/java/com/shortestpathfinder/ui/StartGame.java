@@ -52,8 +52,6 @@ public class StartGame extends JFrame {
         getContentPane().add(label1);
 
         //----------------"Buttons"-------------------------//
-        
-        
         selectMazeButton = new JButton("Select Maze");
         selectMazeButton.setBackground(new Color(231, 231, 231));
         selectMazeButton.setFont(new Font("Tahoma", Font.BOLD, 20));

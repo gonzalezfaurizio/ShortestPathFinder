@@ -13,11 +13,37 @@ import com.shortestpathfinder.utils.JsonUtils;
 import com.google.gson.JsonSyntaxException;
 import com.shortestpathfinder.ui.SelectMaze;
 
+/**
+ * Controller class for handling actions related to the selection and uploading
+ * of mazes. Implements ActionListener to respond to button events in the
+ * SelectMaze view.
+ *
+ * @version 1.0
+ * @since 2024-05-21
+ *
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
+ */
 public class MazeController implements ActionListener {
 
+    /**
+     * The view associated with this controller.
+     */
     private SelectMaze view;
+
+    /**
+     * Data Access Object for managing Maze objects.
+     */
     private MazeDAO mazeDAO;
 
+    /**
+     * Constructs a new MazeController with the specified view and DAO. Adds
+     * action listeners to the upload maze and back buttons in the view.
+     *
+     * @param view the SelectMaze view associated with this controller.
+     * @param mazeDAO the DAO for managing Maze objects.
+     */
     public MazeController(SelectMaze view, MazeDAO mazeDAO) {
         this.view = view;
         this.mazeDAO = mazeDAO;
@@ -25,6 +51,12 @@ public class MazeController implements ActionListener {
         view.getBackButton().addActionListener(this);
     }
 
+    /**
+     * Handles action events triggered by the view. Disposes the view if the
+     * back button is pressed.
+     *
+     * @param e the ActionEvent triggered by a user action.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -56,6 +88,9 @@ public class MazeController implements ActionListener {
         }
     }
 
+    /**
+     * Makes the view visible.
+     */
     public void showView() {
         view.setVisible(true);
     }

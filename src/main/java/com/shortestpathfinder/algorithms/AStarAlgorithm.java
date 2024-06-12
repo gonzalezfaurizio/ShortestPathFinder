@@ -2,6 +2,16 @@ package com.shortestpathfinder.algorithms;
 
 import java.util.*;
 
+/**
+ * Class implementing the A* search algorithm.
+ *
+ * @version 1.0
+ * @since 2024-05-21
+ *
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
+ */
 public class AStarAlgorithm implements PathfindingAlgorithm {
 
     // Static variables to store the start and end coordinates

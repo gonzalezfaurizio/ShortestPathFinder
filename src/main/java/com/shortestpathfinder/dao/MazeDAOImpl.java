@@ -1,4 +1,3 @@
-// File: src/com/shortestpathfinder/dao/MazeDAOImpl.java
 package com.shortestpathfinder.dao;
 
 import com.shortestpathfinder.model.*;
@@ -10,13 +9,20 @@ import java.util.*;
  * @version 1.0
  * @since 2024-05-21
  *
- * @authors: - GONZALEZ ALFARO FAURIZIO - RODRIGUEZ GUTIERREZ REBECA - RODRIGUEZ
- * RODRIGUEZ ANDREY ELADIO
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
  */
 public class MazeDAOImpl implements MazeDAO {
 
+    /**
+     * A list of Maze objects managed by this DAO implementation.
+     */
     private List<Maze> mazes;
 
+    /**
+     * Constructs a new MazeDAOImpl with an empty list of mazes.
+     */
     public MazeDAOImpl() {
         this.mazes = new ArrayList<>();
 
@@ -78,11 +84,23 @@ public class MazeDAOImpl implements MazeDAO {
         this.addMaze(mazeHard);
     }
 
+    /**
+     * Retrieves a list of all mazes.
+     *
+     * @return a list of all Maze objects.
+     */
     @Override
     public List<Maze> getAllMazes() {
         return new ArrayList<>(mazes);
     }
 
+    /**
+     * Retrieves a maze by its unique ID.
+     *
+     * @param id the unique ID of the maze.
+     * @return the Maze object with the specified ID, or null if no such maze
+     * exists.
+     */
     @Override
     public Maze getMazeById(String id) {
         Optional<Maze> maze = mazes.stream()
@@ -91,16 +109,31 @@ public class MazeDAOImpl implements MazeDAO {
         return maze.orElse(null);
     }
 
+    /**
+     * Adds a new maze to the list.
+     *
+     * @param maze the Maze object to be added.
+     */
     @Override
     public void addMaze(Maze maze) {
         mazes.add(maze);
     }
 
+    /**
+     * Updates an existing maze in the list.
+     *
+     * @param maze the Maze object with updated information.
+     */
     @Override
     public void updateMaze(Maze maze) {
         mazes.replaceAll(m -> String.valueOf(m.getId()).equals(String.valueOf(maze.getId())) ? maze : m);
     }
 
+    /**
+     * Deletes a maze by its unique ID from the list.
+     *
+     * @param id the unique ID of the maze to be deleted.
+     */
     @Override
     public void deleteMaze(String id) {
         mazes.removeIf(m -> String.valueOf(m.getId()).equals(id));

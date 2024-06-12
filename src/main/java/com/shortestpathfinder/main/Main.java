@@ -1,4 +1,3 @@
-// File: src/com/shortestpathfinder/main/Main.java
 package com.shortestpathfinder.main;
 
 import com.shortestpathfinder.ui.*;
@@ -11,8 +10,9 @@ import com.shortestpathfinder.dao.*;
  * @version 1.0
  * @since 2024-05-21
  *
- * Authors: - GONZALEZ ALFARO FAURIZIO - RODRIGUEZ GUTIERREZ REBECA - RODRIGUEZ
- * RODRIGUEZ ANDREY ELADIO
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
  */
 public class Main {
 

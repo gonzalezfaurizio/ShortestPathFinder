@@ -1,4 +1,3 @@
-// File: src/com/shortestpathfinder/algorithms/BreadthFirstSearch.java
 package com.shortestpathfinder.algorithms;
 
 import java.util.LinkedList;
@@ -10,8 +9,9 @@ import java.util.Queue;
  * @version 1.0
  * @since 2024-05-21
  *
- * @authors: - GONZALEZ ALFARO FAURIZIO - RODRIGUEZ GUTIERREZ REBECA - RODRIGUEZ
- * RODRIGUEZ ANDREY ELADIO
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
  */
 public class BreadthFirstSearch implements PathfindingAlgorithm {
 

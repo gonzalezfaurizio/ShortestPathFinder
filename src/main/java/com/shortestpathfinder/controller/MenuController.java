@@ -1,4 +1,3 @@
-// File: src/com/shortestpathfinder/controller/MainMenuController.java
 package com.shortestpathfinder.controller;
 
 import com.shortestpathfinder.dao.*;
@@ -12,34 +11,96 @@ import java.awt.event.ActionListener;
  * @version 1.0
  * @since 2024-05-21
  *
- * @author: - GONZALEZ ALFARO FAURIZIO
- * @author: - RODRIGUEZ GUTIERREZ REBECA
- * @author: - RODRIGUEZ RODRIGUEZ ANDREY ELADIO
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
  */
 public class MenuController implements ActionListener {
 
-    //-- Atributos --//
+    /**
+     * The view associated with this controller.
+     */
     private MenuView view;
-    
+
+    /**
+     * The game menu view associated with this controller.
+     */
     private GameMenuView gameMenuView;
+
+    /**
+     * The Hall of Fame menu view associated with this controller.
+     */
     private FameMenuView hallOfFameMenuView;
+
+    /**
+     * The instructions menu view associated with this controller.
+     */
     private InstructionsView instructionsMenuView;
+
+    /**
+     * The exit confirmation view associated with this controller.
+     */
     private ExitView exitConfirmationView;
+
+    /**
+     * The select maze view associated with this controller.
+     */
     private SelectMaze selectMazeView;
+
+    /**
+     * The start game view associated with this controller.
+     */
     private StartGame startGameView;
 
+    /**
+     * The controller for game menu actions.
+     */
     private GameMenuController gameMenuController;
+
+    /**
+     * The controller for Hall of Fame menu actions.
+     */
     private FameController hallOfFameMenuController;
+
+    /**
+     * The controller for instructions menu actions.
+     */
     private InstructionsController instructionsMenuController;
+
+    /**
+     * The controller for exit confirmation actions.
+     */
     private ExitController exitConfirmationController;
+
+    /**
+     * The controller for maze selection actions.
+     */
     private MazeController selectMazeController;
+
+    /**
+     * The controller for game actions.
+     */
     private GameController gameController;
 
+    /**
+     * Data Access Object for managing Player objects.
+     */
     private PlayerDAO playerDAO;
+
+    /**
+     * Data Access Object for managing Game objects.
+     */
     private GameDAO gameDAO;
+
+    /**
+     * Data Access Object for managing Hall of Fame records.
+     */
     private HallOfFameDAO hallOfFameDAO;
+
+    /**
+     * Data Access Object for managing Maze objects.
+     */
     private MazeDAO mazeDAO;
-  
 
     /**
      * Constructor que recibe la vista de menú principal y los DAO. Registra los
@@ -63,13 +124,6 @@ public class MenuController implements ActionListener {
     }
 
     /**
-     * Método para mostrar la vista principal.
-     */
-    public void showView() {
-        view.setVisible(true);
-    }
-
-    /**
      * Maneja los eventos de acción de los botones del menú principal.
      *
      * @param e evento de acción
@@ -84,7 +138,7 @@ public class MenuController implements ActionListener {
 
         if (e.getSource() == view.getNewGameButton()) {
             gameMenuView = new GameMenuView();
-            gameMenuController = new GameMenuController(gameMenuView, gameDAO, playerDAO, mazeDAO,hallOfFameDAO);
+            gameMenuController = new GameMenuController(gameMenuView, gameDAO, playerDAO, mazeDAO, hallOfFameDAO);
             gameMenuController.showView();
         }
 
@@ -100,4 +154,12 @@ public class MenuController implements ActionListener {
             instructionsMenuController.showView();
         }
     }
+
+    /**
+     * Método para mostrar la vista principal.
+     */
+    public void showView() {
+        view.setVisible(true);
+    }
+
 }

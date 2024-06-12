@@ -12,16 +12,31 @@ import java.awt.event.MouseEvent;
  * @version 1.0
  * @since 2024-05-21
  *
- * @author: - GONZALEZ ALFARO FAURIZIO
- * @author: - RODRIGUEZ GUTIERREZ REBECA
- * @author: - RODRIGUEZ RODRIGUEZ ANDREY ELADIO
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
  */
 public class ExitView extends JFrame {
 
+    /**
+     * The main panel containing the buttons.
+     */
     private JPanel panel;
+
+    /**
+     * Button to confirm the exit action.
+     */
     private JButton confirmButton;
+
+    /**
+     * Button to cancel the exit action.
+     */
     private JButton cancelButton;
 
+    /**
+     * Constructs a new ExitView. Initializes the UI components and sets up the
+     * window properties.
+     */
     public ExitView() {
         setTitle("Exit Confirmation");
         setSize(800, 600);
@@ -34,6 +49,9 @@ public class ExitView extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Initializes the UI components of the view.
+     */
     private void initUI() {
 
         //----------------"Titulos"-------------------------//
@@ -118,10 +136,20 @@ public class ExitView extends JFrame {
         panel.add(imageLabel, BorderLayout.CENTER);
     }
 
+    /**
+     * Gets the confirm button.
+     *
+     * @return the confirm button.
+     */
     public JButton getConfirmButton() {
         return confirmButton;
     }
 
+    /**
+     * Gets the cancel button.
+     *
+     * @return the cancel button.
+     */
     public JButton getCancelButton() {
         return cancelButton;
     }

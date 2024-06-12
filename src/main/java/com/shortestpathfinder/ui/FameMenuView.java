@@ -18,9 +18,20 @@ import java.awt.event.MouseEvent;
  */
 public class FameMenuView extends JFrame {
 
+    /**
+     * Button to navigate back to the previous menu.
+     */
     private JButton backButton;
+
+    /**
+     * The main panel containing the UI components.
+     */
     private JPanel panel;
 
+    /**
+     * Constructs a new FameMenuView. Initializes the UI components and sets up
+     * the window properties.
+     */
     public FameMenuView() {
         setTitle("Hall of Fame");
         setSize(800, 600);
@@ -33,6 +44,9 @@ public class FameMenuView extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Initializes the UI components of the view.
+     */
     private void initUI() {
         //----------------"Titulos"-------------------------//
         JLabel label = new JLabel("IF3001 TP01 GR02");
@@ -104,10 +118,20 @@ public class FameMenuView extends JFrame {
         panel.add(imageLabel, BorderLayout.CENTER);
     }
 
+    /**
+     * Gets the back button.
+     *
+     * @return the back button.
+     */
     public JButton getBackButton() {
         return backButton;
     }
 
+    /**
+     * Gets the text area displaying the Hall of Fame records.
+     *
+     * @return the text area displaying the Hall of Fame records.
+     */
     public JTextArea getFameRecordsTextArea() {
         return (JTextArea) ((JScrollPane) getContentPane().getComponent(2)).getViewport().getView();
     }

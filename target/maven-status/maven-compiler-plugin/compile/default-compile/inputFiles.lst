@@ -31,11 +31,9 @@ C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPa
 C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\src\main\java\com\shortestpathfinder\ui\SignUpView.java
 C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\src\main\java\com\shortestpathfinder\dao\MazeDAOImpl.java
 C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\src\main\java\com\shortestpathfinder\model\Player.java
-C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\src\main\java\com\shortestpathfinder\algorithms\FloodFillAlgorithm.java
 C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\src\main\java\com\shortestpathfinder\ui\MazeDisplayPanel.java
 C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\src\main\java\com\shortestpathfinder\dao\GameDAOImpl.java
 C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\src\main\java\com\shortestpathfinder\algorithms\BreadthFirstSearch.java
-C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\src\main\java\com\shortestpathfinder\algorithms\FullMazeTraversal.java
 C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\src\main\java\com\shortestpathfinder\model\Game.java
 C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\src\main\java\com\shortestpathfinder\dao\HallOfFameDAO.java
 C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\src\main\java\com\shortestpathfinder\utils\JsonUtils.java

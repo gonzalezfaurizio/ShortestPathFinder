@@ -17,7 +17,6 @@ com\shortestpathfinder\ui\SignUpView$1.class
 com\shortestpathfinder\ui\MazePreviewPanel.class
 com\shortestpathfinder\ui\ExitView$2.class
 com\shortestpathfinder\utils\JsonUtils.class
-com\shortestpathfinder\algorithms\FullMazeTraversal.class
 com\shortestpathfinder\ui\ExitView.class
 com\shortestpathfinder\ui\MenuView.class
 com\shortestpathfinder\ui\MenuView$4.class
@@ -39,7 +38,6 @@ com\shortestpathfinder\dao\HallOfFameDAOImpl.class
 com\shortestpathfinder\ui\InstructionsView$1.class
 com\shortestpathfinder\algorithms\BreadthFirstSearch.class
 com\shortestpathfinder\controller\SignUpController.class
-com\shortestpathfinder\algorithms\FloodFillAlgorithm.class
 com\shortestpathfinder\algorithms\AStarAlgorithm.class
 com\shortestpathfinder\algorithms\AStarAlgorithm$Node.class
 com\shortestpathfinder\model\Maze.class
