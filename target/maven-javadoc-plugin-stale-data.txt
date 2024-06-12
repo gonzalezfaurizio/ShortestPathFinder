@@ -1,0 +1,56 @@
+@options
+@packages
+-classpath
+'C:/Users/fauri/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar;C:/Users/fauri/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+19
+-sourcepath
+'C:/Users/fauri/OneDrive - Universidad de Costa Rica/Documentos/GitHub/ShortestPathFinder/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/fauri/OneDrive - Universidad de Costa Rica/Documentos/GitHub/ShortestPathFinder/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'ShortestPathFinder 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'ShortestPathFinder 1.0-SNAPSHOT API'
+com.shortestpathfinder.algorithms
+com.shortestpathfinder.controller
+com.shortestpathfinder.dao
+com.shortestpathfinder.main
+com.shortestpathfinder.model
+com.shortestpathfinder.ui
+com.shortestpathfinder.utils
+C:\Users\fauri\.m2\repository\com\google\code\gson\gson\2.11.0\gson-2.11.0.jar = 1716951016103
+C:\Users\fauri\.m2\repository\com\google\errorprone\error_prone_annotations\2.27.0\error_prone_annotations-2.27.0.jar = 1716951016264
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\src\main\java = 1717044154973
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\allclasses-index.html = 1718235054864
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\allpackages-index.html = 1718235054866
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\copy.svg = 1718235055043
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\element-list = 1718235054303
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\help-doc.html = 1718235055029
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\index-all.html = 1718235055007
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\index.html = 1718235054811
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\member-search-index.js = 1718235054906
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\module-search-index.js = 1718235054873
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\overview-summary.html = 1718235055018
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\overview-tree.html = 1718235054803
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\package-search-index.js = 1718235054875
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\script.js = 1718235055040
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\search-page.js = 1718235055054
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\search.html = 1718235055012
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\search.js = 1718235055050
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\serialized-form.html = 1718235054474
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\stylesheet.css = 1718235055035
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\tag-search-index.js = 1718235054919
+C:\Users\fauri\OneDrive - Universidad de Costa Rica\Documentos\GitHub\ShortestPathFinder\target\site\apidocs\type-search-index.js = 1718235054878
