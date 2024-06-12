@@ -1,4 +1,3 @@
-// File: src/com/shortestpathfinder/ui/ExitConfirmationView.java
 package com.shortestpathfinder.ui;
 
 import javax.swing.*;

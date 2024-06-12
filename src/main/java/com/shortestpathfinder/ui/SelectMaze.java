@@ -8,14 +8,43 @@ import java.awt.event.MouseEvent;
 import com.shortestpathfinder.dao.MazeDAO;
 import com.shortestpathfinder.dao.MazeDAOImpl;
 
+/**
+ * View class for selecting and uploading a maze. Extends JFrame to create a
+ * window with buttons for uploading a maze and going back.
+ *
+ * @version 1.0
+ * @since 2024-05-21
+ *
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
+ */
 public class SelectMaze extends JFrame {
 
+    /**
+     * Button to upload a maze.
+     */
     private JButton uploadMazeButton;
 
+    /**
+     * Button to go back to the previous menu.
+     */
     private JButton backButton;
+
+    /**
+     * The main panel containing the UI components.
+     */
     private JPanel panel;
+
+    /**
+     * Data Access Object for managing Maze objects.
+     */
     private MazeDAO mazeDAO;
 
+    /**
+     * Constructs a new SelectMaze view. Initializes the UI components and sets
+     * up the window properties.
+     */
     public SelectMaze() {
         setTitle("Upload Maze");
         setSize(800, 600);
@@ -29,6 +58,9 @@ public class SelectMaze extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Initializes the UI components of the view.
+     */
     private void initUI() {
         //----------------"Titulos"-------------------------//
         JLabel label = new JLabel("IF3001 TP01 GR02");
@@ -60,7 +92,6 @@ public class SelectMaze extends JFrame {
             }
         });
 
-
         backButton = new JButton("Back");
         backButton.setBackground(new Color(231, 231, 231));
         backButton.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -81,7 +112,6 @@ public class SelectMaze extends JFrame {
         backButton.setFocusable(false);
         uploadMazeButton.setFocusable(false);
 
-
         // Crear un JLabel con la imagen
         panel = new JPanel();
         panel.setBackground(new Color(192, 192, 192));
@@ -95,11 +125,20 @@ public class SelectMaze extends JFrame {
         panel.add(imageLabel, BorderLayout.CENTER);
     }
 
+    /**
+     * Gets the upload maze button.
+     *
+     * @return the upload maze button.
+     */
     public JButton getUploadMazeButton() {
         return uploadMazeButton;
     }
 
-
+    /**
+     * Gets the back button.
+     *
+     * @return the back button.
+     */
     public JButton getBackButton() {
         return backButton;
     }

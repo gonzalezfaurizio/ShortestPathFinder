@@ -12,19 +12,41 @@ import java.awt.event.MouseEvent;
  * @version 1.0
  * @since 2024-05-21
  *
- *
- * @author: - GONZALEZ ALFARO FAURIZIO
- * @author: - RODRIGUEZ GUTIERREZ REBECA
- * @author: - RODRIGUEZ RODRIGUEZ ANDREY ELADIO
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
  */
 public class GameMenuView extends JFrame {
 
+    /**
+     * The main panel containing the UI components.
+     */
     private JPanel panel;
-    private JButton singUpButton;
+
+    /**
+     * Button to sign up a new player.
+     */
+    private JButton signUpButton;
+
+    /**
+     * Button to select a maze.
+     */
     private JButton selectMazeButton;
+
+    /**
+     * Button to start a new game.
+     */
     private JButton startGameButton;
+
+    /**
+     * Button to go back to the previous menu.
+     */
     private JButton backButton;
 
+    /**
+     * Constructs a new GameMenuView. Initializes the UI components and sets up
+     * the window properties.
+     */
     public GameMenuView() {
         setTitle("Game Menu");
         setSize(800, 600);
@@ -66,20 +88,20 @@ public class GameMenuView extends JFrame {
         ANDREY.setBounds(32, 520, 600, 39);
         getContentPane().add(ANDREY);
         //A1 ----------------"Sing Up"-------------------------//
-        singUpButton = new JButton("Sign Up");
-        singUpButton.setBackground(new Color(231, 231, 231));
-        singUpButton.setFont(new Font("Tahoma", Font.BOLD, 20));
-        singUpButton.setBounds(32, 200, 180, 39);
-        getContentPane().add(singUpButton);
-        singUpButton.addMouseListener(new MouseAdapter() {
+        signUpButton = new JButton("Sign Up");
+        signUpButton.setBackground(new Color(231, 231, 231));
+        signUpButton.setFont(new Font("Tahoma", Font.BOLD, 20));
+        signUpButton.setBounds(32, 200, 180, 39);
+        getContentPane().add(signUpButton);
+        signUpButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) { // si el mouse entra en el boton
-                singUpButton.setBackground(new Color(192, 192, 192));
+                signUpButton.setBackground(new Color(192, 192, 192));
             }
 
             @Override
             public void mouseExited(MouseEvent e) { // si el mouse sale del boton
-                singUpButton.setBackground(new Color(231, 231, 231));
+                signUpButton.setBackground(new Color(231, 231, 231));
 
             }
         });
@@ -139,7 +161,7 @@ public class GameMenuView extends JFrame {
             }
         });
         //----------------"setFocusable"-------------------------//      
-        singUpButton.setFocusable(false);
+        signUpButton.setFocusable(false);
         selectMazeButton.setFocusable(false);
         startGameButton.setFocusable(false);
         backButton.setFocusable(false);
@@ -159,18 +181,38 @@ public class GameMenuView extends JFrame {
 
     }
 
-    public JButton getSingUpButton() {
-        return singUpButton;
+    /**
+     * Gets the sign-up button.
+     *
+     * @return the sign-up button.
+     */
+    public JButton getSignUpButton() {
+        return signUpButton;
     }
 
+    /**
+     * Gets the select maze button.
+     *
+     * @return the select maze button.
+     */
     public JButton getSelectMazeButton() {
         return selectMazeButton;
     }
 
+    /**
+     * Gets the start game button.
+     *
+     * @return the start game button.
+     */
     public JButton getStartGameButton() {
         return startGameButton;
     }
 
+    /**
+     * Gets the back button.
+     *
+     * @return the back button.
+     */
     public JButton getBackButton() {
         return backButton;
     }

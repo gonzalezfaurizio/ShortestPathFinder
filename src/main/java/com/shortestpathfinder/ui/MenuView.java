@@ -1,4 +1,3 @@
-// File: src/com/shortestpathfinder/ui/MainMenuView.java
 package com.shortestpathfinder.ui;
 
 import javax.swing.*;
@@ -7,23 +6,48 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 /**
- * Class representing the main menu view.
+ * View class for the main menu of the application. Extends JFrame to create a
+ * window with buttons for starting a new game, viewing the Hall of Fame,
+ * viewing instructions, and exiting the application.
  *
  * @version 1.0
  * @since 2024-05-21
  *
- * @author: - GONZALEZ ALFARO FAURIZIO
- * @author: - RODRIGUEZ GUTIERREZ REBECA
- * @author: - RODRIGUEZ RODRIGUEZ ANDREY ELADIO
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
  */
 public class MenuView extends JFrame {
 
+    /**
+     * The main panel containing the UI components.
+     */
     private JPanel panel;
+
+    /**
+     * Button to start a new game.
+     */
     private JButton newGameButton;
+
+    /**
+     * Button to view the Hall of Fame.
+     */
     private JButton hallOfFameButton;
+
+    /**
+     * Button to view the instructions.
+     */
     private JButton instructionsButton;
+
+    /**
+     * Button to exit the application.
+     */
     private JButton exitButton;
 
+    /**
+     * Constructs a new MenuView. Initializes the UI components and sets up the
+     * window properties.
+     */
     public MenuView() {
         setTitle("Main Menu");
         setSize(800, 600);
@@ -36,6 +60,9 @@ public class MenuView extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Initializes the UI components of the view.
+     */
     private void initUI() {
         //----------------"Titulos"-------------------------//
         JLabel label = new JLabel("IF3001 TP01 GR02");
@@ -159,18 +186,38 @@ public class MenuView extends JFrame {
 
     }
 
+    /**
+     * Gets the new game button.
+     *
+     * @return the new game button.
+     */
     public JButton getNewGameButton() {
         return newGameButton;
     }
 
+    /**
+     * Gets the Hall of Fame button.
+     *
+     * @return the Hall of Fame button.
+     */
     public JButton getHallOfFameButton() {
         return hallOfFameButton;
     }
 
+    /**
+     * Gets the instructions button.
+     *
+     * @return the instructions button.
+     */
     public JButton getInstructionsButton() {
         return instructionsButton;
     }
 
+    /**
+     * Gets the exit button.
+     *
+     * @return the exit button.
+     */
     public JButton getExitButton() {
         return exitButton;
     }

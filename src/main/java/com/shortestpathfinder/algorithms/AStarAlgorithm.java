@@ -3,7 +3,8 @@ package com.shortestpathfinder.algorithms;
 import java.util.*;
 
 /**
- * Class implementing the A* search algorithm.
+ * Implementation of the A* pathfinding algorithm. Provides functionality to
+ * find a path through a maze using the A* algorithm.
  *
  * @version 1.0
  * @since 2024-05-21
@@ -14,10 +15,30 @@ import java.util.*;
  */
 public class AStarAlgorithm implements PathfindingAlgorithm {
 
-    // Static variables to store the start and end coordinates
-    static int startX, startY, endX, endY;
+    /**
+     * The starting X coordinate.
+     */
+    static int startX;
 
-    // Inner class representing a node in the grid
+    /**
+     * The starting Y coordinate.
+     */
+    static int startY;
+
+    /**
+     * The ending X coordinate.
+     */
+    static int endX;
+
+    /**
+     * The ending Y coordinate.
+     */
+    static int endY;
+
+    /**
+     * Represents a node in the A* algorithm. Implements Comparable to enable
+     * priority queue operations.
+     */
     static class Node implements Comparable<Node> {
 
         int x, y; // Coordinates of the node
@@ -42,7 +63,12 @@ public class AStarAlgorithm implements PathfindingAlgorithm {
         }
     }
 
-    // Implementation of the pathfinding method
+    /**
+     * Finds the path through the maze using the A* algorithm.
+     *
+     * @param maze the 2D character array representing the maze.
+     * @return a 2D integer array representing the path through the maze.
+     */
     @Override
     public int[][] findPath(char[][] maze) {
 
@@ -142,7 +168,15 @@ public class AStarAlgorithm implements PathfindingAlgorithm {
         return path;
     }
 
-    // Heuristic function to estimate the cost from a node to the end node
+    /**
+     * Calculates the heuristic value for the A* algorithm.
+     *
+     * @param x the X coordinate of the current node.
+     * @param y the Y coordinate of the current node.
+     * @param endX the X coordinate of the goal node.
+     * @param endY the Y coordinate of the goal node.
+     * @return the heuristic value.
+     */
     private int heuristic(int x, int y, int endX, int endY) {
         // Using Manhattan distance as heuristic
         return Math.abs(x - endX) + Math.abs(y - endY);

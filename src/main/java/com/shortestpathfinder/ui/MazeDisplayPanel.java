@@ -3,13 +3,53 @@ package com.shortestpathfinder.ui;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Panel class for displaying a maze and its solution path. Extends JPanel to
+ * provide custom painting of the maze and path.
+ *
+ * @version 1.0
+ * @since 2024-05-21
+ *
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
+ */
 public class MazeDisplayPanel extends JPanel {
 
+    /**
+     * The 2D character array representing the maze.
+     */
     private char[][] maze;
-    private int[][] path;
-    private int cellSize;
-    private int startX, startY, endX, endY;
 
+    /**
+     * The 2D integer array representing the solution path.
+     */
+    private int[][] path;
+
+    /**
+     * The size of each cell in the maze.
+     */
+    private int cellSize;
+
+    /**
+     * The starting coordinates of the maze.
+     */
+    private int startX, startY;
+
+    /**
+     * The ending coordinates of the maze.
+     */
+    private int endX, endY;
+
+    /**
+     * Constructs a new MazeDisplayPanel with the specified maze, path, and
+     * panel dimensions. Initializes the panel with the maze and path data.
+     *
+     * @param maze the 2D character array representing the maze.
+     * @param path the 2D integer array representing the solution path.
+     * @param panelWidth the width of the panel.
+     * @param panelHeight the height of the panel.
+     */
     public MazeDisplayPanel(char[][] maze, int[][] path, int panelWidth, int panelHeight) {
         this.maze = maze;
         this.path = path;
@@ -32,6 +72,12 @@ public class MazeDisplayPanel extends JPanel {
         }
     }
 
+    /**
+     * Paints the maze and its solution path on the panel. This method is called
+     * automatically whenever the panel needs to be repainted.
+     *
+     * @param g the Graphics object used for painting.
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

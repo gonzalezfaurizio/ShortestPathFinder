@@ -11,18 +11,69 @@ import com.shortestpathfinder.dao.MazeDAOImpl;
 import com.shortestpathfinder.dao.PlayerDAOImpl;
 import com.shortestpathfinder.dao.GameDAOImpl;
 
+/**
+ * View class for starting a new game. Extends JFrame to create a window with
+ * buttons for selecting a maze, player, algorithm, displaying the path, and
+ * going back.
+ *
+ * @version 2.0
+ * @since 2024-05-21
+ *
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
+ */
 public class StartGame extends JFrame {
 
+    /**
+     * Button to select a maze.
+     */
     private JButton selectMazeButton;
+
+    /**
+     * Button to select a player.
+     */
     private JButton selectPlayerButton;
+
+    /**
+     * Button to select a pathfinding algorithm.
+     */
     private JButton selectAlgorithmButton;
+
+    /**
+     * Button to display the path found by the algorithm.
+     */
     private JButton displayPathButton;
+
+    /**
+     * Button to go back to the previous menu.
+     */
     private JButton backButton;
+
+    /**
+     * The main panel containing the UI components.
+     */
     private JPanel panel;
+
+    /**
+     * Data Access Object for managing Maze objects.
+     */
     private MazeDAO mazeDAO;
+
+    /**
+     * Data Access Object for managing Player objects.
+     */
     private PlayerDAO playerDAO;
+
+    /**
+     * Data Access Object for managing Game objects.
+     */
     private GameDAO gameDAO;
 
+    /**
+     * Constructs a new StartGame view. Initializes the UI components and sets
+     * up the window properties.
+     */
     public StartGame() {
         setTitle("Start Game");
         setSize(800, 600);
@@ -38,6 +89,9 @@ public class StartGame extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Initializes the UI components of the view.
+     */
     private void initUI() {
         //----------------"Titulos"-------------------------//
         JLabel label = new JLabel("IF3001 TP01 GR02");
@@ -156,22 +210,47 @@ public class StartGame extends JFrame {
         panel.add(imageLabel, BorderLayout.CENTER);
     }
 
+    /**
+     * Gets the select maze button.
+     *
+     * @return the select maze button.
+     */
     public JButton getSelectMazeButton() {
         return selectMazeButton;
     }
 
+    /**
+     * Gets the select player button.
+     *
+     * @return the select player button.
+     */
     public JButton getSelectPlayerButton() {
         return selectPlayerButton;
     }
 
+    /**
+     * Gets the select algorithm button.
+     *
+     * @return the select algorithm button.
+     */
     public JButton getSelectAlgorithmButton() {
         return selectAlgorithmButton;
     }
 
+    /**
+     * Gets the display path button.
+     *
+     * @return the display path button.
+     */
     public JButton getDisplayPathButton() {
         return displayPathButton;
     }
 
+    /**
+     * Gets the back button.
+     *
+     * @return the back button.
+     */
     public JButton getBackButton() {
         return backButton;
     }

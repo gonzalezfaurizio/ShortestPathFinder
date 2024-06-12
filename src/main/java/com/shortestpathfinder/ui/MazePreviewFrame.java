@@ -9,13 +9,47 @@ import java.awt.event.MouseEvent;
 import java.util.List;
 import com.shortestpathfinder.model.Maze;
 
+/**
+ * Frame class for previewing mazes from a list. Extends JFrame and implements
+ * ActionListener to handle button events.
+ *
+ * @version 1.0
+ * @since 2024-05-21
+ *
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
+ */
 public class MazePreviewFrame extends JFrame implements ActionListener {
 
+    /**
+     * The main panel containing the UI components.
+     */
     private JPanel panel;
+
+    /**
+     * Button to go back to the previous menu.
+     */
     private JButton backButton;
+
+    /**
+     * List component to display available mazes.
+     */
     private JList<Maze> mazeList;
+
+    /**
+     * The maze selected from the list.
+     */
     private Maze selectedMaze;
 
+    /**
+     * Constructs a new MazePreviewFrame. Initializes the frame with a list of
+     * mazes and sets up the UI components.
+     *
+     * @param mazes the list of Maze objects to be displayed.
+     * @param selectionListener the ActionListener to handle maze selection
+     * events.
+     */
     public MazePreviewFrame(List<Maze> mazes, ActionListener selectionListener) {
         setTitle("Select Maze");
         setSize(800, 600);
@@ -97,10 +131,21 @@ public class MazePreviewFrame extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+    /**
+     * Gets the selected maze from the list.
+     *
+     * @return the selected Maze object.
+     */
     public Maze getSelectedMaze() {
         return selectedMaze;
     }
 
+    /**
+     * Handles action events triggered by the view. Disposes the frame if the
+     * back button is pressed.
+     *
+     * @param e the ActionEvent triggered by a user action.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == backButton) {

@@ -1,27 +1,50 @@
-// File: src/com/shortestpathfinder/algorithms/DepthFirstSearch.java
 package com.shortestpathfinder.algorithms;
 
 import java.util.LinkedList;
 import java.util.Stack;
 
 /**
- * Interface for pathfinding algorithms.
+ * Implementation of the Depth-First Search (DFS) pathfinding algorithm.
+ * Provides functionality to find a path through a maze using the DFS algorithm.
  *
  * @version 1.0
  * @since 2024-05-21
  *
- * @authors: - GONZALEZ ALFARO FAURIZIO - RODRIGUEZ GUTIERREZ REBECA - RODRIGUEZ
- * RODRIGUEZ ANDREY ELADIO
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
  */
 public class DepthFirstSearch implements PathfindingAlgorithm {
 
-    // Static variables to store the start and end coordinates
-    static int startX, startY, endX, endY;
+    /**
+     * The starting X coordinate.
+     */
+    static int startX;
 
-    // Implementation of the pathfinding method
+    /**
+     * The starting Y coordinate.
+     */
+    static int startY;
+
+    /**
+     * The ending X coordinate.
+     */
+    static int endX;
+
+    /**
+     * The ending Y coordinate.
+     */
+    static int endY;
+
+    /**
+     * Finds the path through the maze using the DFS algorithm.
+     *
+     * @param maze the 2D character array representing the maze.
+     * @return a 2D integer array representing the path through the maze.
+     */
     @Override
     public int[][] findPath(char[][] maze) {
-        
+
         // Identify the start and end points from the maze
         for (int i = 0; i < maze.length; i++) {
             for (int j = 0; j < maze[0].length; j++) {

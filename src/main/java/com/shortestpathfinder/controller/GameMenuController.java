@@ -90,7 +90,7 @@ public class GameMenuController implements ActionListener {
         this.hallOfFameDAO = hallOfFameDAO;
 
         view.getStartGameButton().addActionListener(this);
-        view.getSingUpButton().addActionListener(this);
+        view.getSignUpButton().addActionListener(this);
         view.getBackButton().addActionListener(this);
         view.getSelectMazeButton().addActionListener(this);
 
@@ -103,7 +103,7 @@ public class GameMenuController implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == view.getSingUpButton()) {
+        if (e.getSource() == view.getSignUpButton()) {
             signUpView = new SignUpView();
             signUpMenuController = new SignUpController(signUpView, playerDAO);
             signUpMenuController.showView();

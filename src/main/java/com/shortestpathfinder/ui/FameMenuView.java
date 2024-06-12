@@ -1,4 +1,3 @@
-// File: src/com/shortestpathfinder/ui/HallOfFameMenuView.java
 package com.shortestpathfinder.ui;
 
 import javax.swing.*;
@@ -12,9 +11,9 @@ import java.awt.event.MouseEvent;
  * @version 1.0
  * @since 2024-05-21
  *
- * @author: - GONZALEZ ALFARO FAURIZIO
- * @author: - RODRIGUEZ GUTIERREZ REBECA
- * @author: - RODRIGUEZ RODRIGUEZ ANDREY ELADIO
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
  */
 public class FameMenuView extends JFrame {
 

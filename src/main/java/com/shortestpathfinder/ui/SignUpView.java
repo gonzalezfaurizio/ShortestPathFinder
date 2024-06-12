@@ -5,12 +5,31 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * View class for user sign-up. Extends JFrame to create a window with fields
+ * for user input and buttons for signing up and going back.
+ */
 public class SignUpView extends JFrame {
 
+    /**
+     * Button to sign up a new user.
+     */
     private JButton signUpButton;
+
+    /**
+     * Button to go back to the previous menu.
+     */
     private JButton backButton;
+
+    /**
+     * Text field for entering the user's name.
+     */
     private JTextField nameField;
 
+    /**
+     * Constructs a new SignUpView. Initializes the UI components and sets up
+     * the window properties.
+     */
     public SignUpView() {
         setTitle("Sign Up");
         setSize(800, 600);
@@ -23,6 +42,9 @@ public class SignUpView extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Initializes the UI components of the view.
+     */
     private void initUI() {
         //----------------"Titulos"-------------------------//
         JLabel label = new JLabel("IF3001 TP01 GR02");
@@ -98,14 +120,29 @@ public class SignUpView extends JFrame {
         panel.add(imageLabel, BorderLayout.CENTER);
     }
 
+    /**
+     * Gets the sign-up button.
+     *
+     * @return the sign-up button.
+     */
     public JButton getSignUpButton() {
         return signUpButton;
     }
 
+    /**
+     * Gets the back button.
+     *
+     * @return the back button.
+     */
     public JButton getBackButton() {
         return backButton;
     }
 
+    /**
+     * Gets the text field for entering the user's name.
+     *
+     * @return the name field.
+     */
     public JTextField getNameField() {
         return nameField;
     }

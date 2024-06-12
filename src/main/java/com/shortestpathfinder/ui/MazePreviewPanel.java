@@ -4,10 +4,30 @@ import javax.swing.*;
 import java.awt.*;
 import com.shortestpathfinder.model.Maze;
 
+/**
+ * Panel class for displaying a preview of a maze. Extends JPanel to provide
+ * custom painting of the maze preview.
+ *
+ * @version 1.0
+ * @since 2024-05-21
+ *
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
+ */
 public class MazePreviewPanel extends JPanel {
 
+    /**
+     * The Maze object to be displayed in the preview.
+     */
     private Maze maze;
 
+    /**
+     * Constructs a new MazePreviewPanel. Initializes the panel with the
+     * specified maze.
+     *
+     * @param maze the Maze object to be displayed in the preview.
+     */
     public MazePreviewPanel(Maze maze) {
         this.maze = maze;
         setLayout(new BorderLayout());

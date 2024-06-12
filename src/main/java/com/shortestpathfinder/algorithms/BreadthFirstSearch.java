@@ -4,7 +4,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Class implementing the breadth-first search algorithm.
+ * Implementation of the Breadth-First Search (BFS) pathfinding algorithm.
+ * Provides functionality to find a path through a maze using the BFS algorithm.
  *
  * @version 1.0
  * @since 2024-05-21
@@ -15,10 +16,32 @@ import java.util.Queue;
  */
 public class BreadthFirstSearch implements PathfindingAlgorithm {
 
-    // Static variables to store the start and end coordinates
-    static int startX, startY, endX, endY;
+    /**
+     * The starting X coordinate.
+     */
+    static int startX;
 
-    // Implementation of the pathfinding method
+    /**
+     * The starting Y coordinate.
+     */
+    static int startY;
+
+    /**
+     * The ending X coordinate.
+     */
+    static int endX;
+
+    /**
+     * The ending Y coordinate.
+     */
+    static int endY;
+
+    /**
+     * Finds the path through the maze using the BFS algorithm.
+     *
+     * @param maze the 2D character array representing the maze.
+     * @return a 2D integer array representing the path through the maze.
+     */
     @Override
     public int[][] findPath(char[][] maze) {
 
