@@ -124,9 +124,9 @@ public class MenuController implements ActionListener {
     }
 
     /**
-     * Maneja los eventos de acción de los botones del menú principal.
+     * Handles action events triggered by the view.
      *
-     * @param e evento de acción
+     * @param e the ActionEvent triggered by a user action.
      */
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -156,7 +156,7 @@ public class MenuController implements ActionListener {
     }
 
     /**
-     * Método para mostrar la vista principal.
+     * Makes the view visible.
      */
     public void showView() {
         view.setVisible(true);
