@@ -40,8 +40,7 @@ Shortest Path Finder es una aplicación desarrollada como parte del proyecto pro
 - **A* (AStarAlgorithm.java):** Algoritmo de búsqueda heurística que encuentra el camino más corto con eficiencia.
 - **Búsqueda en profundidad (DepthFirstSearch.java):** Explora todas las alternativas posibles, retrocediendo solo cuando es necesario.
 - **Búsqueda en anchura (BreadthFirstSearch.java):** Recorre una rama de una intersección a otra, retrocediendo para revisar caminos alternativos.
-- **Relleno por inundación (FloodFillAlgorithm.java):** Realiza recorridos optimistas suponiendo inicialmente que no hay muros.
-- **Recorrido completo del laberinto (FullMazeTraversal.java):** Explora todas las rutas posibles del laberinto.
+
 
 ## Contribuciones
 
@@ -70,6 +69,6 @@ Las contribuciones son bienvenidas. Para contribuir, sigue estos pasos:
 
 ## Contacto
 
-Para preguntas o sugerencias, por favor contacta a [faurizio.gonzalez@ucr.ac.cr].
+Para preguntas o sugerencias, por favor contacta a faurizio.gonzalez@ucr.ac.cr .
 
 ---
