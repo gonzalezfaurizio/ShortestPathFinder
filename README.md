@@ -37,7 +37,7 @@ Shortest Path Finder es una aplicación desarrollada como parte del proyecto pro
    ```
 ## Algoritmos de Recorrido Implementados
 
-- **A* (AStarAlgorithm.java):** Algoritmo de búsqueda heurística que encuentra el camino más corto con eficiencia.
+- **A Star (AStarAlgorithm.java):** Algoritmo de búsqueda heurística que encuentra el camino más corto con eficiencia.
 - **Búsqueda en profundidad (DepthFirstSearch.java):** Explora todas las alternativas posibles, retrocediendo solo cuando es necesario.
 - **Búsqueda en anchura (BreadthFirstSearch.java):** Recorre una rama de una intersección a otra, retrocediendo para revisar caminos alternativos.
 
