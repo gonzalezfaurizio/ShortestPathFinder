@@ -130,7 +130,7 @@ public class ExitView extends JFrame {
         panel.setLayout(new BorderLayout());
 
         // Ruta de la imagen
-        String imagePath = "C:\\Users\\fauri\\OneDrive - Universidad de Costa Rica\\Documentos\\A. Universidad De Costa Rica\\A. Informática\\B. Algoritmos y Estructuras de Datos\\E. Proyecto Programado\\ShortestPathFinder\\src\\main\\java\\com\\shortestpathfinder\\resources\\exit.png";
+        String imagePath = "C:\\Users\\fauri\\OneDrive - Universidad de Costa Rica\\Documentos\\GitHub\\ShortestPathFinder\\src\\main\\java\\com\\shortestpathfinder\\resources\\exit.png";
         JLabel imageLabel = new JLabel(new ImageIcon(imagePath));
         panel.add(imageLabel, BorderLayout.CENTER);
     }

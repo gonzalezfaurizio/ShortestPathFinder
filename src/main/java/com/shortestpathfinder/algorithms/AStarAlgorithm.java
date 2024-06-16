@@ -41,9 +41,34 @@ public class AStarAlgorithm implements PathfindingAlgorithm {
      */
     static class Node implements Comparable<Node> {
 
-        int x, y; // Coordinates of the node
-        int g, h; // g is the cost from start to this node, h is the heuristic cost to the end
+        /**
+         * The X coordinate of the node.
+         */
+        int x;
 
+        /**
+         * The Y coordinate of the node.
+         */
+        int y;
+
+        /**
+         * The cost from the start node to this node.
+         */
+        int g;
+
+        /**
+         * The heuristic cost from this node to the end node.
+         */
+        int h;
+
+        /**
+         * Constructs a Node with the specified coordinates and costs.
+         *
+         * @param x the X coordinate of the node.
+         * @param y the Y coordinate of the node.
+         * @param g the cost from the start node to this node.
+         * @param h the heuristic cost from this node to the end node.
+         */
         Node(int x, int y, int g, int h) {
             this.x = x;
             this.y = y;
@@ -51,12 +76,23 @@ public class AStarAlgorithm implements PathfindingAlgorithm {
             this.h = h;
         }
 
-        // Method to calculate the f score of the node (f = g + h)
+        /**
+         * Calculates the f score of the node (f = g + h).
+         *
+         * @return the f score of the node.
+         */
         int f() {
             return g + h;
         }
 
-        // Compare nodes based on their f scores
+        /**
+         * Compares this node with another node based on their f scores.
+         *
+         * @param other the other node to compare to.
+         * @return a negative integer, zero, or a positive integer as this
+         * node's f score is less than, equal to, or greater than the other
+         * node's f score.
+         */
         @Override
         public int compareTo(Node other) {
             return Integer.compare(this.f(), other.f());

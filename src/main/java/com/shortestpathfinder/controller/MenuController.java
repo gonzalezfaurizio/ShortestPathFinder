@@ -109,6 +109,8 @@ public class MenuController implements ActionListener {
      * @param view Vista del menú principal
      * @param gameDAO DAO de juegos
      * @param hallOfFameDAO DAO del Salón de la Fama
+     * @param playerDAO
+     * @param mazeDAO
      */
     public MenuController(MenuView view, GameDAO gameDAO, HallOfFameDAO hallOfFameDAO, PlayerDAO playerDAO, MazeDAO mazeDAO) {
         this.view = view;

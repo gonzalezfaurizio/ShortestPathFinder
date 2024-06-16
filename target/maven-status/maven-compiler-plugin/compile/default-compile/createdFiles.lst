@@ -1,5 +1,6 @@
 com\shortestpathfinder\ui\StartGame$3.class
 com\shortestpathfinder\controller\MazeController.class
+com\shortestpathfinder\ui\MazeDisplayPanel$1.class
 com\shortestpathfinder\ui\GameMenuView.class
 com\shortestpathfinder\ui\SelectMaze.class
 com\shortestpathfinder\algorithms\DepthFirstSearch.class

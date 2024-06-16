@@ -2,12 +2,16 @@ package com.shortestpathfinder.ui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Panel class for displaying a maze and its solution path. Extends JPanel to
  * provide custom painting of the maze and path.
  *
- * @version 1.0
+ * @version 1.1
  * @since 2024-05-21
  *
  * @author GONZALEZ ALFARO FAURIZIO
@@ -42,6 +46,21 @@ public class MazeDisplayPanel extends JPanel {
     private int endX, endY;
 
     /**
+     * List to store the coordinates of the solution path points.
+     */
+    private List<Point> pathPoints;
+
+    /**
+     * The current step in the path being displayed.
+     */
+    private int currentStep;
+
+    /**
+     * Timer for updating the display.
+     */
+    private Timer timer;
+
+    /**
      * Constructs a new MazeDisplayPanel with the specified maze, path, and
      * panel dimensions. Initializes the panel with the maze and path data.
      *
@@ -56,7 +75,7 @@ public class MazeDisplayPanel extends JPanel {
         int rows = maze.length;
         int cols = maze[0].length;
         this.cellSize = Math.min(panelWidth / cols, panelHeight / rows);
-        setPreferredSize(new Dimension(cols * cellSize, rows * cellSize));
+        setPreferredSize(new Dimension(cols * (cellSize / 2), rows * (cellSize / 2)));
 
         // Identify start and end points
         for (int i = 0; i < rows; i++) {
@@ -70,6 +89,32 @@ public class MazeDisplayPanel extends JPanel {
                 }
             }
         }
+
+        // Store the path points in a list
+        pathPoints = new ArrayList<>();
+        for (int j = 0; j < cols; j++) {
+            for (int i = 0; i < rows; i++) {
+                if (path[i][j] > 0) {
+                    pathPoints.add(new Point(i, j));
+                }
+            }
+        }
+        pathPoints.sort((p1, p2) -> Integer.compare(path[p1.x][p1.y], path[p2.x][p2.y]));
+
+        // Initialize the timer to update the display every second
+        currentStep = 0;
+        timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (currentStep < pathPoints.size()) {
+                    currentStep++;
+                    repaint();
+                } else {
+                    timer.stop();
+                }
+            }
+        });
+        timer.start();
     }
 
     /**
@@ -84,16 +129,6 @@ public class MazeDisplayPanel extends JPanel {
         int rows = maze.length;
         int cols = maze[0].length;
 
-        // Find the maximum steps value in the path
-        int maxSteps = 0;
-        for (int[] row : path) {
-            for (int cell : row) {
-                if (cell > maxSteps) {
-                    maxSteps = cell;
-                }
-            }
-        }
-
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 if (maze[i][j] == 'X') {
@@ -104,20 +139,24 @@ public class MazeDisplayPanel extends JPanel {
                 g.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
                 g.setColor(Color.GRAY);
                 g.drawRect(j * cellSize, i * cellSize, cellSize, cellSize);
-
-                if (path[i][j] > 0) {
-                    if (i == startX && j == startY) {
-                        g.setColor(Color.BLUE); // Starting point
-                    } else if (i == endX && j == endY) {
-                        g.setColor(Color.RED); // Ending point
-                    } else {
-                        int steps = path[i][j];
-                        float ratio = (float) steps / maxSteps;
-                        g.setColor(new Color(ratio, 0.0f, 1.0f - ratio)); // Gradient from blue to red
-                    }
-                    g.fillOval(j * cellSize + cellSize / 4, i * cellSize + cellSize / 4, cellSize / 2, cellSize / 2);
-                }
             }
+        }
+
+        // Draw the path points
+        g.setColor(Color.GRAY); // Set color for the path points
+        for (int k = 0; k < currentStep; k++) {
+            Point p = pathPoints.get(k);
+            int i = p.x;
+            int j = p.y;
+
+            if (i == startX && j == startY) {
+                g.setColor(Color.GRAY); // Starting point
+            } else if (i == endX && j == endY) {
+                g.setColor(Color.GRAY); // Ending point
+            } else {
+                g.setColor(Color.GRAY); // Path points
+            }
+            g.fillOval(j * cellSize + cellSize / 4, i * cellSize + cellSize / 4, cellSize / 2, cellSize / 2);
         }
     }
 }
