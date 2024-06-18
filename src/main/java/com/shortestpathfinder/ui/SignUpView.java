@@ -115,7 +115,7 @@ public class SignUpView extends JFrame {
         panel.setLayout(new BorderLayout());
 
         // Ruta de la imagen
-        String imagePath = "C:\\Users\\fauri\\OneDrive - Universidad de Costa Rica\\Documentos\\GitHub\\ShortestPathFinder\\src\\main\\java\\com\\shortestpathfinder\\resources\\user.png";
+        String imagePath = "resources/user.png";
         JLabel imageLabel = new JLabel(new ImageIcon(imagePath));
         panel.add(imageLabel, BorderLayout.CENTER);
     }

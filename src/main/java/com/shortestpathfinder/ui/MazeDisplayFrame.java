@@ -79,7 +79,7 @@ public class MazeDisplayFrame extends JFrame implements ActionListener {
         panel.setLayout(new BorderLayout());
 
         // Image path
-        String imagePath = "C:\\Users\\fauri\\OneDrive - Universidad de Costa Rica\\Documentos\\GitHub\\ShortestPathFinder\\src\\main\\java\\com\\shortestpathfinder\\resources\\maze.png";
+        String imagePath = "resources/maze.png";
         JLabel imageLabel = new JLabel(new ImageIcon(imagePath));
         panel.add(imageLabel, BorderLayout.CENTER);
 
