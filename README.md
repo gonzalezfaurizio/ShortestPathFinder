@@ -67,8 +67,12 @@ Las contribuciones son bienvenidas. Para contribuir, sigue estos pasos:
 - **C36713 Rodriguez Gutierrez Rebeca**
 - **C36773 Rodriguez Rodriguez Andrey Eladio**
 
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT. Para más detalles, consulta el archivo [LICENSE](LICENSE).
+
 ## Contacto
 
-Para preguntas o sugerencias, por favor contacta a faurizio.gonzalez@ucr.ac.cr .
+Si tienes alguna pregunta o sugerencia, no dudes en contactar al autor del proyecto en [fauriziogonzalez@gmail.com](mailto:fauriziogonzalez@gmail.com).
 
 ---
