@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -92,14 +93,7 @@ public class MazeDisplayPanel extends JPanel {
 
         // Store the path points in a list
         pathPoints = new ArrayList<>();
-        for (int j = 0; j < cols; j++) {
-            for (int i = 0; i < rows; i++) {
-                if (path[i][j] > 0) {
-                    pathPoints.add(new Point(i, j));
-                }
-            }
-        }
-        pathPoints.sort((p1, p2) -> Integer.compare(path[p1.x][p1.y], path[p2.x][p2.y]));
+        findPath(new Point(startX, startY));
 
         // Initialize the timer to update the display every second
         currentStep = 0;
@@ -159,4 +153,68 @@ public class MazeDisplayPanel extends JPanel {
             g.fillOval(j * cellSize + cellSize / 4, i * cellSize + cellSize / 4, cellSize / 2, cellSize / 2);
         }
     }
+
+    /**
+     * Finds a path from the current point to the end point using a
+     * heuristic-based search algorithm. The found path is stored in the
+     * pathPoints list.
+     *
+     * @param current the current point in the pathfinding process
+     */
+    private void findPath(Point current) {
+        pathPoints.add(current);
+        if (current.x == endX && current.y == endY) {
+            return;
+        }
+
+        List<Point> neighbors = getValidNeighbors(current);
+        neighbors.sort(Comparator.comparingInt(this::heuristic));
+
+        for (Point neighbor : neighbors) {
+            if (!pathPoints.contains(neighbor)) {
+                findPath(neighbor);
+                break;
+            }
+        }
+    }
+
+    /**
+     * Retrieves a list of valid neighboring points that can be moved to from
+     * the specified point.
+     *
+     * @param p the point for which to find valid neighbors
+     * @return a list of valid neighboring points
+     */
+    private List<Point> getValidNeighbors(Point p) {
+        List<Point> neighbors = new ArrayList<>();
+        int x = p.x;
+        int y = p.y;
+
+        if (x > 0 && path[x - 1][y] > 0) {
+            neighbors.add(new Point(x - 1, y));
+        }
+        if (x < maze.length - 1 && path[x + 1][y] > 0) {
+            neighbors.add(new Point(x + 1, y));
+        }
+        if (y > 0 && path[x][y - 1] > 0) {
+            neighbors.add(new Point(x, y - 1));
+        }
+        if (y < maze[0].length - 1 && path[x][y + 1] > 0) {
+            neighbors.add(new Point(x, y + 1));
+        }
+
+        return neighbors;
+    }
+
+    /**
+     * Calculates a heuristic value for the given point, which is the Manhattan
+     * distance from the start point to the given point.
+     *
+     * @param p the point for which to calculate the heuristic
+     * @return the heuristic value for the point
+     */
+    private int heuristic(Point p) {
+        return Math.abs(startX - p.x) + Math.abs(startY - p.y);
+    }
+
 }

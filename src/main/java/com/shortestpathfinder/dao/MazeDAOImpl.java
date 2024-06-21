@@ -27,11 +27,11 @@ public class MazeDAOImpl implements MazeDAO {
         this.mazes = new ArrayList<>();
 
         Maze maze1 = new Maze("maze1", "Simple Maze", "Easy", new char[][]{
-            {'S', ' ', 'X', ' ', ' '},
+            {'S', ' ', 'X', ' ', 'E'},
             {'X', ' ', 'X', ' ', 'X'},
             {' ', ' ', ' ', ' ', ' '},
             {'X', 'X', 'X', ' ', 'X'},
-            {' ', ' ', ' ', ' ', 'E'}
+            {' ', ' ', ' ', ' ', ' '}
         });
 
         Maze maze2 = new Maze("maze2", "Medium Maze", "Medium", new char[][]{
