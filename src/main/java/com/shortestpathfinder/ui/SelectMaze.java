@@ -12,7 +12,7 @@ import com.shortestpathfinder.dao.MazeDAOImpl;
  * View class for selecting and uploading a maze. Extends JFrame to create a
  * window with buttons for uploading a maze and going back.
  *
- * @version 1.0
+ * @version 2.0
  * @since 2024-05-21
  *
  * @author GONZALEZ ALFARO FAURIZIO
@@ -30,6 +30,11 @@ public class SelectMaze extends JFrame {
      * Button to go back to the previous menu.
      */
     private JButton backButton;
+
+    /**
+     * Button to show maze information.
+     */
+    private JButton showInfoButton;
 
     /**
      * The main panel containing the UI components.
@@ -78,7 +83,7 @@ public class SelectMaze extends JFrame {
         uploadMazeButton = new JButton("Upload Maze");
         uploadMazeButton.setBackground(new Color(231, 231, 231));
         uploadMazeButton.setFont(new Font("Tahoma", Font.BOLD, 20));
-        uploadMazeButton.setBounds(32, 200, 180, 39);
+        uploadMazeButton.setBounds(32, 281, 180, 39);
         getContentPane().add(uploadMazeButton);
         uploadMazeButton.addMouseListener(new MouseAdapter() {
             @Override
@@ -95,7 +100,8 @@ public class SelectMaze extends JFrame {
         backButton = new JButton("Back");
         backButton.setBackground(new Color(231, 231, 231));
         backButton.setFont(new Font("Tahoma", Font.BOLD, 20));
-        backButton.setBounds(32, 281, 180, 39);
+        backButton.setBounds(32, 362, 180, 39);
+
         getContentPane().add(backButton);
         backButton.addMouseListener(new MouseAdapter() {
             @Override
@@ -109,8 +115,26 @@ public class SelectMaze extends JFrame {
             }
         });
 
+        showInfoButton = new JButton("Maze Info");
+        showInfoButton.setBackground(new Color(231, 231, 231));
+        showInfoButton.setFont(new Font("Tahoma", Font.BOLD, 20));
+        showInfoButton.setBounds(32, 200, 180, 39);
+        getContentPane().add(showInfoButton);
+        showInfoButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                showInfoButton.setBackground(new Color(192, 192, 192));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                showInfoButton.setBackground(new Color(231, 231, 231));
+            }
+        });
+
         backButton.setFocusable(false);
         uploadMazeButton.setFocusable(false);
+        showInfoButton.setFocusable(false);
 
         // Crear un JLabel con la imagen
         panel = new JPanel();
@@ -120,7 +144,7 @@ public class SelectMaze extends JFrame {
         panel.setLayout(new BorderLayout());
 
         // Ruta de la imagen
-        String imagePath = "resources/maze.png";
+        String imagePath = "resources/upload.png";
         JLabel imageLabel = new JLabel(new ImageIcon(imagePath));
         panel.add(imageLabel, BorderLayout.CENTER);
     }
@@ -141,6 +165,15 @@ public class SelectMaze extends JFrame {
      */
     public JButton getBackButton() {
         return backButton;
+    }
+
+    /**
+     * Gets the show info button.
+     *
+     * @return the show info button.
+     */
+    public JButton getShowInfoButton() {
+        return showInfoButton;
     }
 
 }

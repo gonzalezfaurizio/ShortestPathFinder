@@ -48,10 +48,10 @@ public class BreadthFirstSearch implements PathfindingAlgorithm {
         // Identify the start and end points from the maze
         for (int i = 0; i < maze.length; i++) {
             for (int j = 0; j < maze[0].length; j++) {
-                if (maze[i][j] == 'S') {
+                if (maze[i][j] == 'S' || maze[i][j] == 'P') {
                     startX = i;
                     startY = j;
-                } else if (maze[i][j] == 'E') {
+                } else if (maze[i][j] == 'E' || maze[i][j] == 'Z') {
                     endX = i;
                     endY = j;
                 }

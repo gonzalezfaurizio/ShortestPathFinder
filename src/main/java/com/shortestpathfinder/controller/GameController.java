@@ -152,15 +152,12 @@ public class GameController implements ActionListener {
      * Handles the selection of a pathfinding algorithm.
      */
     private void handleSelectAlgorithm() {
-        String[] algorithms = {"BreadthFirstSearch", "DepthFirstSearch", "AStarAlgorithm"};
+        String[] algorithms = {"BreadthFirstSearch", "AStarAlgorithm"};
         String selectedAlgorithmName = (String) JOptionPane.showInputDialog(view, "Select an algorithm", "Algorithm Selection", JOptionPane.PLAIN_MESSAGE, null, algorithms, algorithms[0]);
         if (selectedAlgorithmName != null) {
             switch (selectedAlgorithmName) {
                 case "BreadthFirstSearch":
                     selectedAlgorithm = new BreadthFirstSearch();
-                    break;
-                case "DepthFirstSearch":
-                    selectedAlgorithm = new DepthFirstSearch();
                     break;
                 case "AStarAlgorithm":
                     selectedAlgorithm = new AStarAlgorithm();

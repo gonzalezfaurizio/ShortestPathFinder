@@ -1,14 +1,12 @@
 package com.shortestpathfinder.utils;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
+import com.shortestpathfinder.dao.MazeDAOImpl;
 
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 
-import java.util.List;
 
 /**
  * Utility class for handling JSON operations.
@@ -45,21 +43,6 @@ public class JsonUtils {
     }
 
     /**
-     * Converts an object to a JSON file.
-     *
-     * @param filePath the path to the JSON file.
-     * @param object the object to be converted to JSON.
-     * @param <T> the type of the object.
-     * @throws IOException if there is an error writing to the file.
-     * @throws JsonIOException if there is an error during JSON serialization.
-     */
-    public static <T> void toJson(String filePath, T object) throws IOException, JsonIOException {
-        try (FileWriter writer = new FileWriter(filePath)) {
-            gson.toJson(object, writer);
-        }
-    }
-
-    /**
      * Validates the structure of a JSON file representing a Maze.
      *
      * @param filePath the path to the JSON file.
@@ -67,47 +50,69 @@ public class JsonUtils {
      * @throws IOException if there is an error reading the file.
      * @throws JsonSyntaxException if the JSON is not valid.
      */
-    public static boolean validateJsonStructure(String filePath) throws IOException, JsonSyntaxException {
+    public static boolean validateJsonStructure(String filePath, MazeDAOImpl mazeDAO) throws IOException, JsonSyntaxException {
         try (FileReader reader = new FileReader(filePath)) {
             Maze maze = gson.fromJson(reader, Maze.class);
-            return maze != null && maze.isValid();
+            if (maze == null) {
+                return false;
+            }
+
+            if (mazeDAO.getMazeByCode(maze.getCode()) != null) {
+                return false; // Maze already exists
+            }
+
+            // Validate that code, name, difficulty, and grid are not null
+            if (maze.getCode() == null || maze.getName() == null || maze.getDifficulty() == null || maze.getGrid() == null) {
+                return false;
+            }
+
+            // Extract row and column size from the first row
+            char[][] grid = maze.getGrid();
+            int rowSize = grid.length;
+            int colSize = grid[0].length;
+
+            int startCount = 0;
+            int endCount = 0;
+
+            for (char[] row : grid) {
+                if (row.length != colSize) {
+                    return false; // Inconsistent column size
+                }
+                for (char cell : row) {
+                    if (cell == 'S' || cell == 'P') {
+                        startCount++;
+                    } else if (cell == 'E' || cell == 'Z') {
+                        endCount++;
+                    }
+                }
+            }
+
+            // Ensure only one start and one end point
+            return startCount == 1 && endCount == 1;
         }
     }
 
-    /**
-     * Represents a Maze with validation capabilities.
-     */
     private static class Maze {
 
         private String code;
         private String name;
         private String difficulty;
-        private List<List<String>> grid;
+        private char[][] grid;
 
-        /**
-         * Validates the Maze structure.
-         *
-         * @return true if the Maze contains valid data, false otherwise.
-         */
-        public boolean isValid() {
-            if (code == null || name == null || difficulty == null || grid == null) {
-                return false;
-            }
+        public String getCode() {
+            return code;
+        }
 
-            boolean hasStart = false;
-            boolean hasEnd = false;
+        public String getName() {
+            return name;
+        }
 
-            for (List<String> row : grid) {
-                for (String cell : row) {
-                    if ("S".equals(cell)) {
-                        hasStart = true;
-                    } else if ("E".equals(cell)) {
-                        hasEnd = true;
-                    }
-                }
-            }
+        public String getDifficulty() {
+            return difficulty;
+        }
 
-            return hasStart && hasEnd;
+        public char[][] getGrid() {
+            return grid;
         }
     }
 }

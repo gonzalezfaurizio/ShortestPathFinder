@@ -48,7 +48,7 @@ public class MazeDisplayFrame extends JFrame implements ActionListener {
 
         JScrollPane scrollPane = new JScrollPane(mazeDisplayPanel);
 
-        scrollPane.setBounds(0, 0, 425, 425); // Ajustar tamaño y posición según el diseño
+        scrollPane.setBounds(0, 0, 425, 425);
         getContentPane().add(scrollPane);
 
         // Back button

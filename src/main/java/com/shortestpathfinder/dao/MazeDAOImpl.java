@@ -27,11 +27,11 @@ public class MazeDAOImpl implements MazeDAO {
         this.mazes = new ArrayList<>();
 
         Maze maze1 = new Maze("maze1", "Simple Maze", "Easy", new char[][]{
-            {'S', ' ', 'X', ' ', 'E'},
-            {'X', ' ', 'X', ' ', 'X'},
-            {' ', ' ', ' ', ' ', ' '},
-            {'X', 'X', 'X', ' ', 'X'},
-            {' ', ' ', ' ', ' ', ' '}
+            {'P', '_', 'X', '_', 'Z'},
+            {'X', '_', 'X', '_', 'X'},
+            {'_', '_', '_', '_', '_'},
+            {'X', 'X', 'X', '_', 'X'},
+            {'_', '_', '_', '_', '_'}
         });
 
         Maze maze2 = new Maze("maze2", "Medium Maze", "Medium", new char[][]{
@@ -107,6 +107,20 @@ public class MazeDAOImpl implements MazeDAO {
                 .filter(m -> String.valueOf(m.getId()).equals(id))
                 .findFirst();
         return maze.orElse(null);
+    }
+
+    /**
+     * Retrieves a maze by its unique code.
+     *
+     * @param code the unique code of the maze.
+     * @return the Maze object with the specified code, or null if no such maze
+     * exists.
+     */
+    public Maze getMazeByCode(String code) {
+        return mazes.stream()
+                .filter(m -> m.getCode().equals(code))
+                .findFirst()
+                .orElse(null);
     }
 
     /**

@@ -81,10 +81,10 @@ public class MazeDisplayPanel extends JPanel {
         // Identify start and end points
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                if (maze[i][j] == 'S') {
+                if (maze[i][j] == 'S' || maze[i][j] == 'P') {
                     startX = i;
                     startY = j;
-                } else if (maze[i][j] == 'E') {
+                } else if (maze[i][j] == 'E' || maze[i][j] == 'Z') {
                     endX = i;
                     endY = j;
                 }
@@ -97,7 +97,7 @@ public class MazeDisplayPanel extends JPanel {
 
         // Initialize the timer to update the display every second
         currentStep = 0;
-        timer = new Timer(1000, new ActionListener() {
+        timer = new Timer(500, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (currentStep < pathPoints.size()) {
@@ -144,9 +144,9 @@ public class MazeDisplayPanel extends JPanel {
             int j = p.y;
 
             if (i == startX && j == startY) {
-                g.setColor(Color.GRAY); // Starting point
+                g.setColor(Color.GREEN); // Starting point
             } else if (i == endX && j == endY) {
-                g.setColor(Color.GRAY); // Ending point
+                g.setColor(Color.RED); // Ending point
             } else {
                 g.setColor(Color.GRAY); // Path points
             }

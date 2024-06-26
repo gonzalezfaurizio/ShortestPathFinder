@@ -43,6 +43,8 @@ public class GameMenuView extends JFrame {
      */
     private JButton backButton;
 
+    private JButton simulationButton; 
+
     /**
      * Constructs a new GameMenuView. Initializes the UI components and sets up
      * the window properties.
@@ -87,6 +89,7 @@ public class GameMenuView extends JFrame {
         ANDREY.setFont(new Font("Tahoma", Font.BOLD, 10));
         ANDREY.setBounds(32, 520, 600, 39);
         getContentPane().add(ANDREY);
+        
         //A1 ----------------"Sing Up"-------------------------//
         signUpButton = new JButton("Sign Up");
         signUpButton.setBackground(new Color(231, 231, 231));
@@ -146,7 +149,7 @@ public class GameMenuView extends JFrame {
         backButton = new JButton("Back");
         backButton.setBackground(new Color(231, 231, 231));
         backButton.setFont(new Font("Tahoma", Font.BOLD, 20));
-        backButton.setBounds(32, 281, 180, 39);
+        backButton.setBounds(32, 360, 180, 39);
         getContentPane().add(backButton);
         backButton.addMouseListener(new MouseAdapter() {
             @Override
@@ -160,11 +163,31 @@ public class GameMenuView extends JFrame {
 
             }
         });
+
+        // ----------------"Simulation"-------------------------//
+        simulationButton = new JButton("Simulation"); 
+        simulationButton.setBackground(new Color(231, 231, 231));
+        simulationButton.setFont(new Font("Tahoma", Font.BOLD, 20));
+        simulationButton.setBounds(32, 281, 180, 39);
+        getContentPane().add(simulationButton);
+        simulationButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                simulationButton.setBackground(new Color(192, 192, 192));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                simulationButton.setBackground(new Color(231, 231, 231));
+            }
+        });
+
         //----------------"setFocusable"-------------------------//      
         signUpButton.setFocusable(false);
         selectMazeButton.setFocusable(false);
         startGameButton.setFocusable(false);
         backButton.setFocusable(false);
+        simulationButton.setFocusable(false);
 
         //----------------"JPanel"-------------------------// 
         // Crear un JLabel con la imagen
@@ -215,6 +238,10 @@ public class GameMenuView extends JFrame {
      */
     public JButton getBackButton() {
         return backButton;
+    }
+
+    public JButton getSimulationButton() { 
+        return simulationButton;
     }
 
 }
