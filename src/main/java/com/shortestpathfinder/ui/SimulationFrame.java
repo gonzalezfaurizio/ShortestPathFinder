@@ -57,7 +57,7 @@ public class SimulationFrame extends JFrame implements ActionListener {
 
         infoPanel.add(bestAlgorithmLabel);
 
-        backButton = new JButton("Back");//setBounds(32, 360, 180, 39);
+        backButton = new JButton("Back");
         backButton.setBackground(new Color(231, 231, 231));
         backButton.setFont(new Font("Tahoma", Font.BOLD, 20));
         backButton.addMouseListener(new MouseAdapter() {

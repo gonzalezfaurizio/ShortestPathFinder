@@ -42,7 +42,7 @@ public class GameMenuController implements ActionListener {
         view.getSignUpButton().addActionListener(this);
         view.getBackButton().addActionListener(this);
         view.getSelectMazeButton().addActionListener(this);
-        view.getSimulationButton().addActionListener(this); // Añadir listener para el botón de simulación
+        view.getSimulationButton().addActionListener(this);
     }
 
     @Override
@@ -69,7 +69,7 @@ public class GameMenuController implements ActionListener {
             view.dispose();
         }
 
-        if (e.getSource() == view.getSimulationButton()) { // Manejar evento del botón de simulación
+        if (e.getSource() == view.getSimulationButton()) { 
             simulationView = new Simulation();
             simulationController = new SimulationController(simulationView, mazeDAO);
             simulationController.showView();
