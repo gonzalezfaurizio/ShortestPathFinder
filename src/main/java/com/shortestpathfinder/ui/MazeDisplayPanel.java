@@ -12,7 +12,7 @@ import java.util.List;
  * Panel class for displaying a maze and its solution path. Extends JPanel to
  * provide custom painting of the maze and path.
  *
- * @version 1.1
+ * @version 2.0
  * @since 2024-05-21
  *
  * @author GONZALEZ ALFARO FAURIZIO
@@ -57,6 +57,11 @@ public class MazeDisplayPanel extends JPanel {
     private int currentStep;
 
     /**
+     * Indicates whether the animation is moving forward or backward.
+     */
+    private boolean forward;
+
+    /**
      * Timer for updating the display.
      */
     private Timer timer;
@@ -76,7 +81,7 @@ public class MazeDisplayPanel extends JPanel {
         int rows = maze.length;
         int cols = maze[0].length;
         this.cellSize = Math.min(panelWidth / cols, panelHeight / rows);
-        setPreferredSize(new Dimension(cols * (cellSize / 2), rows * (cellSize / 2)));
+        setPreferredSize(new Dimension(cols * (cellSize / 2) + 1, rows * (cellSize / 2) + 1));
 
         // Identify start and end points
         for (int i = 0; i < rows; i++) {
@@ -95,17 +100,28 @@ public class MazeDisplayPanel extends JPanel {
         pathPoints = new ArrayList<>();
         findPath(new Point(startX, startY));
 
-        // Initialize the timer to update the display every second
+        // Initialize the timer to update the display every 500ms
         currentStep = 0;
+        forward = true;
         timer = new Timer(500, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (currentStep < pathPoints.size()) {
-                    currentStep++;
-                    repaint();
+                if (forward) {
+                    if (currentStep < pathPoints.size()) {
+                        currentStep++;
+                    } else {
+                        forward = false;
+                        currentStep = 0;
+                    }
                 } else {
-                    timer.stop();
+                    if (currentStep < pathPoints.size()) {
+                        currentStep++;
+                    } else {
+                        forward = true;
+                        currentStep = 0;
+                    }
                 }
+                repaint();
             }
         });
         timer.start();
@@ -139,7 +155,7 @@ public class MazeDisplayPanel extends JPanel {
         // Draw the path points
         g.setColor(Color.GRAY); // Set color for the path points
         for (int k = 0; k < currentStep; k++) {
-            Point p = pathPoints.get(k);
+            Point p = forward ? pathPoints.get(k) : pathPoints.get(pathPoints.size() - 1 - k);
             int i = p.x;
             int j = p.y;
 
@@ -216,5 +232,4 @@ public class MazeDisplayPanel extends JPanel {
     private int heuristic(Point p) {
         return Math.abs(startX - p.x) + Math.abs(startY - p.y);
     }
-
 }

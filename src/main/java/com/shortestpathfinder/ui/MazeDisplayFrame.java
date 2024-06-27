@@ -14,6 +14,9 @@ import java.awt.event.MouseEvent;
  * @version 1.0
  * @since 2024-05-21
  *
+ * Displays a maze and its solution path with a back button to return to the
+ * previous menu.
+ *
  * @author GONZALEZ ALFARO FAURIZIO
  * @author RODRIGUEZ GUTIERREZ REBECA
  * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
@@ -44,10 +47,20 @@ public class MazeDisplayFrame extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         getContentPane().setLayout(null);
 
+        initUI(maze, path);
+        setVisible(true);
+    }
+
+    /**
+     * Initializes the UI components of the frame.
+     *
+     * @param maze the 2D character array representing the maze.
+     * @param path the 2D integer array representing the solution path.
+     */
+    private void initUI(char[][] maze, int[][] path) {
+        // Maze display panel
         MazeDisplayPanel mazeDisplayPanel = new MazeDisplayPanel(maze, path, 425, 425);
-
         JScrollPane scrollPane = new JScrollPane(mazeDisplayPanel);
-
         scrollPane.setBounds(0, 0, 425, 425);
         getContentPane().add(scrollPane);
 
@@ -78,12 +91,10 @@ public class MazeDisplayFrame extends JFrame implements ActionListener {
         getContentPane().add(panel);
         panel.setLayout(new BorderLayout());
 
-        // Image path
+        // Image label
         String imagePath = "resources/maze.png";
         JLabel imageLabel = new JLabel(new ImageIcon(imagePath));
         panel.add(imageLabel, BorderLayout.CENTER);
-
-        setVisible(true);
     }
 
     /**

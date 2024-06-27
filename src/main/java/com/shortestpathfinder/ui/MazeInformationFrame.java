@@ -6,6 +6,20 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
 
+/**
+ * Frame class for displaying maze information. Extends JFrame and implements
+ * ActionListener to handle button events.
+ *
+ * @version 1.0
+ * @since 2024-06-25
+ *
+ * Displays a list of mazes and provides a back button to return to the previous
+ * menu.
+ * 
+ * @author GONZALEZ ALFARO FAURIZIO
+ * @author RODRIGUEZ GUTIERREZ REBECA
+ * @author RODRIGUEZ RODRIGUEZ ANDREY ELADIO
+ */
 public class MazeInformationFrame extends JFrame implements ActionListener {
 
     /**
@@ -33,9 +47,21 @@ public class MazeInformationFrame extends JFrame implements ActionListener {
         setTitle("Maze Information");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setResizable(false);
         setLocationRelativeTo(null);
         getContentPane().setLayout(null);
 
+        initUI(mazes);
+        setVisible(true);
+    }
+
+    /**
+     * Initializes the UI components of the frame.
+     *
+     * @param mazes the list of Maze objects to be displayed.
+     */
+    private void initUI(List<Maze> mazes) {
+        // Maze list setup
         mazeList = new JList<>(new DefaultListModel<>());
         mazes.forEach(maze -> ((DefaultListModel<Maze>) mazeList.getModel()).addElement(maze));
         mazeList.setCellRenderer(new ListCellRenderer<>() {
@@ -49,10 +75,10 @@ public class MazeInformationFrame extends JFrame implements ActionListener {
         });
 
         JScrollPane scrollPane = new JScrollPane(mazeList);
-        scrollPane.setBounds(0, 0, 400, 400); // Ajustar tamaño y posición según el diseño
+        scrollPane.setBounds(0, 0, 400, 400);
         getContentPane().add(scrollPane);
 
-        // Back button
+        // Back button setup
         backButton = new JButton("Back");
         backButton.setBackground(new Color(231, 231, 231));
         backButton.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -69,22 +95,20 @@ public class MazeInformationFrame extends JFrame implements ActionListener {
                 backButton.setBackground(new Color(231, 231, 231));
             }
         });
-        backButton.addActionListener(e -> dispose());
+        backButton.addActionListener(this);
         backButton.setFocusable(false);
 
-        // Panel with image
+        // Panel with image setup
         panel = new JPanel();
         panel.setBackground(new Color(192, 192, 192));
         panel.setBounds(440, 0, 362, 563);
         getContentPane().add(panel);
         panel.setLayout(new BorderLayout());
 
-        // Image path
+        // Image label setup
         String imagePath = "resources/info.png";
         JLabel imageLabel = new JLabel(new ImageIcon(imagePath));
         panel.add(imageLabel, BorderLayout.CENTER);
-
-        setVisible(true);
     }
 
     /**

@@ -9,7 +9,7 @@ import java.awt.event.MouseEvent;
 /**
  * Class for the new game submenu view.
  *
- * @version 1.0
+ * @version 2.0
  * @since 2024-05-21
  *
  * @author GONZALEZ ALFARO FAURIZIO
@@ -43,7 +43,10 @@ public class GameMenuView extends JFrame {
      */
     private JButton backButton;
 
-    private JButton simulationButton; 
+    /**
+     * Button to go to the simulation view.
+     */
+    private JButton simulationButton;
 
     /**
      * Constructs a new GameMenuView. Initializes the UI components and sets up
@@ -89,7 +92,7 @@ public class GameMenuView extends JFrame {
         ANDREY.setFont(new Font("Tahoma", Font.BOLD, 10));
         ANDREY.setBounds(32, 520, 600, 39);
         getContentPane().add(ANDREY);
-        
+
         //A1 ----------------"Sing Up"-------------------------//
         signUpButton = new JButton("Sign Up");
         signUpButton.setBackground(new Color(231, 231, 231));
@@ -165,7 +168,7 @@ public class GameMenuView extends JFrame {
         });
 
         // ----------------"Simulation"-------------------------//
-        simulationButton = new JButton("Simulation"); 
+        simulationButton = new JButton("Simulation");
         simulationButton.setBackground(new Color(231, 231, 231));
         simulationButton.setFont(new Font("Tahoma", Font.BOLD, 20));
         simulationButton.setBounds(32, 281, 180, 39);
@@ -240,7 +243,12 @@ public class GameMenuView extends JFrame {
         return backButton;
     }
 
-    public JButton getSimulationButton() { 
+    /**
+     * Gets the simulationButton.
+     *
+     * @return the simulationButton.
+     */
+    public JButton getSimulationButton() {
         return simulationButton;
     }
 

@@ -7,12 +7,14 @@ import com.shortestpathfinder.dao.MazeDAOImpl;
 import java.io.FileReader;
 import java.io.IOException;
 
-
 /**
  * Utility class for handling JSON operations.
  *
  * @version 2.0
  * @since 2024-05-21
+ *
+ * Provides methods to convert JSON files to objects and validate the structure
+ * of JSON files representing Mazes.
  *
  * @author GONZALEZ ALFARO FAURIZIO
  * @author RODRIGUEZ GUTIERREZ REBECA
@@ -46,6 +48,7 @@ public class JsonUtils {
      * Validates the structure of a JSON file representing a Maze.
      *
      * @param filePath the path to the JSON file.
+     * @param mazeDAO the Maze data access object for database operations.
      * @return true if the JSON structure is valid, false otherwise.
      * @throws IOException if there is an error reading the file.
      * @throws JsonSyntaxException if the JSON is not valid.
@@ -92,25 +95,63 @@ public class JsonUtils {
         }
     }
 
+    /**
+     * Private inner class representing a Maze.
+     */
     private static class Maze {
 
+        /**
+         * The unique code of the maze.
+         */
         private String code;
+
+        /**
+         * The name of the maze.
+         */
         private String name;
+
+        /**
+         * The difficulty level of the maze.
+         */
         private String difficulty;
+
+        /**
+         * The 2D character array representing the maze grid.
+         */
         private char[][] grid;
 
+        /**
+         * Returns the unique code of the maze.
+         *
+         * @return the maze code.
+         */
         public String getCode() {
             return code;
         }
 
+        /**
+         * Returns the name of the maze.
+         *
+         * @return the maze name.
+         */
         public String getName() {
             return name;
         }
 
+        /**
+         * Returns the difficulty level of the maze.
+         *
+         * @return the maze difficulty level.
+         */
         public String getDifficulty() {
             return difficulty;
         }
 
+        /**
+         * Returns the 2D character array representing the maze grid.
+         *
+         * @return the maze grid.
+         */
         public char[][] getGrid() {
             return grid;
         }

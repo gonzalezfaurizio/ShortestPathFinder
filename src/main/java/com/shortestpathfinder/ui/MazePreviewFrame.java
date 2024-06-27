@@ -14,7 +14,7 @@ import com.shortestpathfinder.model.Maze;
  * ActionListener to handle button events.
  *
  * @version 1.0
- * @since 2024-05-21
+ * @since 2024-06-26
  *
  * @author GONZALEZ ALFARO FAURIZIO
  * @author RODRIGUEZ GUTIERREZ REBECA
@@ -70,10 +70,10 @@ public class MazePreviewFrame extends JFrame implements ActionListener {
         });
 
         JScrollPane scrollPane = new JScrollPane(mazeList);
-        scrollPane.setBounds(0, 0, 400, 400); // Ajustar tamaño y posición según el diseño
+        scrollPane.setBounds(0, 0, 400, 400);
         getContentPane().add(scrollPane);
 
-        // Back button
+        //----------------"Back"-------------------------//
         backButton = new JButton("Back");
         backButton.setBackground(new Color(231, 231, 231));
         backButton.setFont(new Font("Tahoma", Font.BOLD, 20));
