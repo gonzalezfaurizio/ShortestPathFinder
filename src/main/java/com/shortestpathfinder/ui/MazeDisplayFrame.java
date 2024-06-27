@@ -106,6 +106,9 @@ public class MazeDisplayFrame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == backButton) {
+            JOptionPane.showMessageDialog(this, """
+                                                You will be redirected to the 'Start Game' window,
+                                                 where you can select new options for a new game.""", "Redirecting", JOptionPane.INFORMATION_MESSAGE);
             dispose();
         }
     }

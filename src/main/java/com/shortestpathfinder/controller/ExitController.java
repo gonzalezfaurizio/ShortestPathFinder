@@ -3,6 +3,7 @@ package com.shortestpathfinder.controller;
 import com.shortestpathfinder.ui.ExitView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  * Controller for the exit confirmation.
@@ -43,6 +44,7 @@ public class ExitController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == view.getConfirmButton()) {
+            JOptionPane.showMessageDialog(view, "Thank you for playing", "Goodbye", JOptionPane.INFORMATION_MESSAGE);
             System.exit(0);
         }
         if (e.getSource() == view.getCancelButton()) {

@@ -192,9 +192,8 @@ public class GameController implements ActionListener {
             currentGame.setCurrentSteps(steps);
             gameDAO.addGame(currentGame);
             hallOfFameDAO.addFameRecord(new FameRecord(currentGame.getPlayer().getName(), currentGame.getMaze().getName(), steps, currentGame.getAlgorithmUsed()));
-            JOptionPane.showMessageDialog(view, "Path found and game completed! " + currentGame, "Game Completed", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(view, "Recognition stage successfully completed and the shortest path found! " + currentGame, "Game Completed", JOptionPane.INFORMATION_MESSAGE);
 
-            // Display the path graphically
             new MazeDisplayFrame(mazeGrid, path);
         } else {
             JOptionPane.showMessageDialog(view, "No path found using the selected algorithm.", "No Path Found", JOptionPane.INFORMATION_MESSAGE);
