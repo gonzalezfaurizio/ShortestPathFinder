@@ -172,7 +172,7 @@ public class AStarAlgorithm implements PathfindingAlgorithm {
 
                     visited[newX][newY] = true; // Mark neighbor as visited
 
-                    predecessors[newX][newY][0] = x; // Set predecessor
+                    predecessors[newX][newY][0] = x; // Set predecessor 
 
                     predecessors[newX][newY][1] = y;
                 }
