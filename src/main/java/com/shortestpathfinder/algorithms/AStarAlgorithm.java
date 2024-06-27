@@ -155,6 +155,7 @@ public class AStarAlgorithm implements PathfindingAlgorithm {
 
             // Explore the neighboring nodes
             int[][] directions = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+            
             for (int[] dir : directions) {
                 int newX = x + dir[0];
                 int newY = y + dir[1];
@@ -176,6 +177,7 @@ public class AStarAlgorithm implements PathfindingAlgorithm {
                     predecessors[newX][newY][1] = y;
                 }
             }
+            
         }
 
         if (!found) {
