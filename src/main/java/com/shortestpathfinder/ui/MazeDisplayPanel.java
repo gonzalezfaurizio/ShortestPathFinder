@@ -100,7 +100,7 @@ public class MazeDisplayPanel extends JPanel {
         pathPoints = new ArrayList<>();
         findPath(new Point(startX, startY));
 
-        // Initialize the timer to update the display every 500ms
+         // Initialize the timer to update the display every 500ms
         currentStep = 0;
         forward = true;
         timer = new Timer(500, new ActionListener() {
@@ -117,8 +117,7 @@ public class MazeDisplayPanel extends JPanel {
                     if (currentStep < pathPoints.size()) {
                         currentStep++;
                     } else {
-                        forward = true;
-                        currentStep = 0;
+                        timer.stop(); 
                     }
                 }
                 repaint();
