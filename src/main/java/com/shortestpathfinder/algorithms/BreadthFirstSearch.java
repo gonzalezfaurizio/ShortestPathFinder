@@ -19,22 +19,22 @@ public class BreadthFirstSearch implements PathfindingAlgorithm {
     /**
      * The starting X coordinate.
      */
-    static int startX;
+    private static int startX;
 
     /**
      * The starting Y coordinate.
      */
-    static int startY;
+    private static int startY;
 
     /**
      * The ending X coordinate.
      */
-    static int endX;
+    private static int endX;
 
     /**
      * The ending Y coordinate.
      */
-    static int endY;
+    private static int endY;
 
     /**
      * Finds the path through the maze using the BFS algorithm.

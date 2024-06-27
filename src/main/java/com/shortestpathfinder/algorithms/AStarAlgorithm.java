@@ -18,48 +18,48 @@ public class AStarAlgorithm implements PathfindingAlgorithm {
     /**
      * The starting X coordinate.
      */
-    static int startX;
+    private static int startX;
 
     /**
      * The starting Y coordinate.
      */
-    static int startY;
+    private static int startY;
 
     /**
      * The ending X coordinate.
      */
-    static int endX;
+    private static int endX;
 
     /**
      * The ending Y coordinate.
      */
-    static int endY;
+    private static int endY;
 
     /**
      * Represents a node in the A* algorithm. Implements Comparable to enable
      * priority queue operations.
      */
-    static class Node implements Comparable<Node> {
+    private static class Node implements Comparable<Node> {
 
         /**
          * The X coordinate of the node.
          */
-        int x;
+        public int x;
 
         /**
          * The Y coordinate of the node.
          */
-        int y;
+        public int y;
 
         /**
          * The cost from the start node to this node.
          */
-        int g;
+        public int g;
 
         /**
          * The heuristic cost from this node to the end node.
          */
-        int h;
+        public int h;
 
         /**
          * Constructs a Node with the specified coordinates and costs.
